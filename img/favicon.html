@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<!--     https://braingps.mricloud.org -->
+    <title>MriCloud | Brain Mapping</title>
+
+    
+    <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico" />
+    <!-- 20131205 to make the boostrap-styled components like dropdown menus working must include the boostrap.js, 
+    and must include jquery before boostrap.js !!!!! -->
+<!--     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script> -->
+    <!-- point jquery source to local position, in case the googleapis.com link doesn't work -->
+    <script src="https://braingps.mricloud.org/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <!-- use HTML::script() function to add script file, thus will generate absolute path!!! -->
+    
+<!--     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script> -->
+<!--     <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/fontawesome/font-awesome.min.css">
+ -->
+    
+<!--    <script src="https://braingps.mricloud.org/bootstrap/js/bootstrap.min.js"></script>
+ modify the .modal classes to enable .modal-lg etc    
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/css/bootstrap.css">
+ 
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/css/bootstrap-responsive.css">
+ --> 
+
+<!-- new version bootstrap is not compatible with 20140821 page code  
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+ 
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+ 
+    --> 
+
+    
+    <script src="https://braingps.mricloud.org/bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/bootstrap-3.2.0/dist/css/bootstrap.min.css">
+ 
+<!-- this theme css change the style!!!!!!!11  
+  <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/bootstrap-3.2.0/dist/css/bootstrap-theme.min.css">
+ --> 
+    
+<!--    <link media="all" type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link media="all" type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+ 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+-->
+    
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/css/style.css">
+<!-- 
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap-theme.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+     <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/css/style.css">
+ -->   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+		        <div class="container">
+        <div class="navbar navbar-default">
+             <div class="container-fluid"> 
+            
+<!--               <a class="brand" href="/">MriCloud</a> -->
+             <div class="navbar-header">
+               <a class="navbar-brand" href="/">BrainGPS</a>
+             </div> 
+<!--               <div class="collapse nav-collapse"> -->
+<!-- -->
+            <ul class="nav navbar-nav">
+              <li class=""><a href="https://braingps.mricloud.org/about">About</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/terms">Terms</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/contact">Contact</a></li>
+              </ul>
+          </div><!--/.nav-collapse -->
+      </div>
+      </div>
+
+   <div class = "container">
+    <div class="nav navbar-default">
+
+            <div class="row">
+      <div class="span8 text-error">
+        <h4>Page not found.</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <p class="text-error">
+          We couldn't find the page you requested.  We're working hard to get this page back online as soon as possible.         </p>
+      </div>
+      <div class="span8">
+        <p class="lead"><a href="#" onclick="history.back();return false;">« Back</a></p>
+      </div>
+    </div>
+        
+    </div>
+    </div>
+
+    <div class = "container">
+    <footer>
+  		
+    <div class="container text-center">
+        <hr>
+<p>MriCloud  <br> Site created by <a href= "http://www.anatomyworks.com">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<a href="#mricloud_tip"><i class="icon-info-sign" id="mricloudtip"></i></a>
+		<div id="mricloud_tip" style="display:none">
+		<p>	MriCloud 1.0</p>
+		<p>Copyright 2013 AnatomyWorks LLC, <a href= "https://www.anatomyworks.com">www.anatomyworks.com</a>
+<p>This website was created by AnatomyWorks. BrainGPS algorithms and brain atlas resources are licensed from Johns Hopkins University.</p>
+<p>MriCloud is not intended for clinical use and should be used for research purpose only.</p>
+        </div>
+<!-- put all the content and behavior of the module in one place -->
+        
+<script src="https://braingps.mricloud.org/qtip/jquery.qtip.min.js"></script>
+<link rel="stylesheet" href="https://braingps.mricloud.org/qtip/jquery.qtip.min.css">
+	<script> 	
+    // tooltip http://qtip2.com/demos
+    $('#mricloudtip').each(function() {
+        $(this).qtip({
+            content: {
+//                text: $(this).next('.tooltiptext')
+                  text: $('#mricloud_tip').html()
+            },
+            position: {
+                target: 'mouse', // Position it where the click was...
+                adjust: { mouse: false } // ...but don't follow the mouse
+            }           
+            
+        });
+    });   
+</script></p>
+<!--  <a href="#" data-toggle="tooltip" title="MRICloud  DiffeoMap 1.0
+Copyright 2013 AnatomyWorks Inc., www.AnatomyWorks.com
+MRICloud DiffeoMap is based on the AnatomyWorks patented DiffeoMAP GPS image analysis technologies for medical imaging and atlas based semantic representation of dense medical imagery. It enables any researcher working in the field of Computational Anatomy in Medical imaging to parse MR imagery into an ontological labeling based on parcellated atlas fields provided by researchers at Johns Hopkins University Susumu Mori from the Department of Radiology in the School of Medicine and Michael Miller from the Center for Imaging Science in the Whiting School of Engineering.
+The DIffeoMap solutions for segmentation and image analysis currently support a large number of disease and age matched atlases built with a common neuroscience ontology.
+MRICloud DiffeoMAP is licensed for use for research purposes only.
+MRICloud is not intended for clinical use, and makes no representation that it is a clinically approved medical device. Analysis result must not be used for any purpose other than research. Each licensed user is issued with a corresponding license agreement which is either accepted or declined during the initial use of the software. If declined, the user cannot use MRICloud. 
+If you have questions, please do not hesitate to contact us at …. or at info@MRICloud.org.
+"><i class="icon-info-sign icon-large"></i></a>  		 
+        <a class="nounderline" href="#" data-toggle="tooltip" title="GETTING STARTED
+To enroll, if you are an MRIStudio user then the system will recognize you. If you are a new user with a Gmail account then MRICloud supports opened.
+SEGMENTATION
+MRICloud currently supports T1 and DTI segmentation.
+T1-Brain/Skull/Ventricle/CSF provides a 4-5 label segmentation in native coordinates giving the user access to Brain (G+W) compartment, Skull compartment, Ventricle compartment, and CSF compartment. The service returns the following metadata in Native coordinates: … To use the service, select from the drop down SEGMENTATION button T1-Brain… Then select the dataset to be uploaded from either disk or an XNAT source. The status of your job will be in the Status section.
+T1-250 provides a 250 label segmentation in native coordinates giving the user access to all such compartments. It’s use is the same as above.
+DTI provides a …..
+  		"><i class="icon-question-sign icon-large"></i></a>-->
+        
+        </div>
+    </footer>
+    </div>
+    
+        <!-- have to yield the sections for javascript, the partial blades must put javascript include source files at the end!
+    	if they are in the middle of the page, the libraries will not be loaded when calling jquery on document ready function!
+    	the order the javascript source files loaded matters!!!!!!!
+    	clinicalformjs must be load last to enable expandable feature!!!!!!!11
+     --> 
+                    
+  </body>
+</html>
