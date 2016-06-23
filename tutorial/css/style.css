@@ -1,0 +1,61 @@
+.navbar-inner{
+    /*padding-left: 0px;*/
+}
+.container{
+    /*background-color: white;*/
+    /*padding-left: 20px;*/
+ }
+.content{
+    min-height: 450px;
+ }
+
+
+.verticalLine {
+    border-right: solid #000000;
+    padding: 20px;
+    background-color: gray;
+}
+
+.blue{
+    color: rgb(0, 85, 128); 
+}
+
+.gray{
+    background-color: gray;
+ }
+/*for better spacing - from fweb*/
+button.detect { margin-top: 10px; }
+form#generate { margin-bottom: 50px; }
+label#upload_button { margin-bottom: 45px; }
+a#downloadButton { margin-bottom: 45px; }
+input.signin { margin-top:5px; }
+button.signin { padding-top:2px; }
+form.signin { margin: 0 8px 0 0; }
+span.signin, span.logout { margin: 16px 15px 0 0; font-size: 11px; }
+span.welcome { margin: 16px 5px 0 0; }
+span.status { margin: 5px 5px 0 0; max-height: 12px; line-height: 14px;}
+button.reset_password { margin-bottom: 10px; }
+div.signup { margin-top: 70px; }
+form.signup input, form.signup select, form.signup button { margin:10px 5px 0 0;}
+form.signup input.name { max-width: 171px; }
+form.signup .error { border: 1px solid #b94a48; }
+div.nopage { margin-top: 50px; }
+div.modal-footer label.checkbox { margin-right: 100px; }
+.modal-backdrop, .modal-backdrop.fade.in { opacity: 0.5; }
+h6.mini { font-size: 11px; margin: 50px; }
+input#showOcclusions { margin: 0 12px 3px 0px; }
+label.edit { margin-top: 15px; }
+.payment-errors { background-color:#f2dede; border-color:#eed3d7; color:#b94a48; border: 1px solid #fbeed5; }
+img.doc, iframe.doc { margin-left:auto;margin-right:auto;display:block;margin-bottom:20px; }
+
+.subheading{
+  /*content: "Example";*/
+  /*position: absolute;*/
+  top:  15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4b4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

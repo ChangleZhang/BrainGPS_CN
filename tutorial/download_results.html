@@ -1,0 +1,149 @@
+
+<!-- saved from url=(0083)download_results.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta content="">
+    <style></style>
+  <link rel="stylesheet" type="text/css" href="css/hippocampus.css">
+  </head>
+  <body>
+
+<br>
+
+<h2> Download Results </h2>
+
+<table border="0" width="1200px"><!--CAWorks-->
+<tbody><tr>
+    <td width="25%">Step 1<br><br>Press the Download Result push button.<br><br><br><br></td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/download_results_push_button_highlighted.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>Step 2<br><br>A dialog is displayed.<br><br>  Select the Save push button to save the Results.zip file to your file system.<br><br></td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/download_results_push_button_dialog_highlighted.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>Step 3<br><br>Unzip the Results.zip file.<br><br>A list of the result files is shown at right.<br><br>The results shown correspond to an image file named T1.img<br><br> This name of the image added as a prefix to the results.  A description of result files is included in the table below.</td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/download_results_unzip_list_tree.png" align="center" alt="Head"></a></td>
+</tr><tr>
+
+</tr></tbody></table>
+<h2> Description of Results </h2>
+
+<table border="1" width="1200px"><!--CAWorks-->
+    
+    <tbody><tr><td>Directory</td> <td>File Type</td>  <td>File Name</td><td>Description</td>
+</tr><tr>
+    <td>&nbsp;   </td> <td>Text  </td> <td>atlas_list.txt  </td>   <td> The name and the version of the multiple atlases used for the processing   </td>
+</tr><tr>
+    <td>&nbsp;  </td> <td>Text  </td>   <td>config.txt</td>     <td> Parameters used by segmentation algorithm  </td>
+</tr><tr>
+    <td>&nbsp;  </td> <td>Text  </td>   <td>identity.txt</td>     <td> User email </td>
+</tr><tr>
+    <td>&nbsp;  </td>  <td>Text  </td>  <td>local_address.txt</td>     <td> Image file names </td>
+</tr><tr>
+    <td>&nbsp;  </td>  <td>Text  </td>  <td>priority.txt</td>     <td> Priority level </td>
+</tr><tr>
+    <td>&nbsp;  </td>  <td>Text  </td>  <td>Config.txt</td>     <td> The submitted images</td>
+</tr><tr>
+    <td>output  </td>  <td>Image  </td>  <td>A<br> User_defined_filename.img/hdr </td>     <td>The submitted T1-weighted image that are converted to an axial image orientation, histogram matched, and intensity inhomogeneity corrected. The matrix size remains the original dimensions. </td>
+</tr><tr>
+    <td>output  </td>  <td>Image  </td>  <td>B<br> User_defined_filename_SS.img/hdr</td>     <td>Same as A, except that image is skull-stripped. </td>
+</tr><tr>
+    <td>output  </td>  <td>Image  </td> <td>C<br>User_defined_filename_MNI.img/hdr    </td>     <td>Same as A, except that the image is linearly normalized to the MNI space. The matrix size is 181x217x181 / 1 x 1 x 1 mm.  </td>
+</tr><tr>
+    <td>output  </td>  <td>Image  </td>  <td>D<br>User_defined_filename_MNI_SS.img/hdr   </td>     <td>Same as C, except that the image is skull-stripped. </td>
+</tr><tr>
+    <td>output  </td>  <td>Segmentation label files  </td>  <td> User_defined_filename_286Labels.img/hdr  </td>     <td>An ROI file that contains the 286 defined structures.  </td>
+</tr><tr>
+    <td>output  </td>  <td>Segmentation label files  </td>  <td> User_defined_filename_286labels_MNI.img/hdr  </td>     <td>An ROI file that contains the 286 defined structures in the MNI space.</td>
+</tr><tr>
+    <td>output  </td>  <td>Segmentation label files  </td>  <td>multilevel_lookup_table.txt  </td>     <td>This contains structure look-up table in a text format.  </td>
+<!-- <tr>
+    <td>output  </td>  <td>Volume report files  </td>  <td>A<BR> User_defined_filename_286Labels_stats.txt  </td>     <td>The volumes (mm^3) of all defined structures with 10 different granularity levels in the native patient coordinates.  </td>
+<tr> 
+    <td>output  </td>  <td>Volume report files  </td>  <td>B<BR>User_defined_filename_286Labels_corrected_stats.txt  </td>     <td>Same as A, but the volumes are normalized using the total brain volume (= tissues + ventricles + sulci).  </td>
+
+<tr>
+    <td>output  </td>  <td>Volume report files  </td>  <td>C<BR>_defined_filename_286Labels_MNI_stats.txt   </td>     <td>Same as A, but after the image normalization to the MNI coordinates by linear transformation.  </td>
+	-->
+</tr><tr> 
+    <td>output  </td>  <td>Volume report files  </td>  <td>A<br>User_defined_filename_286Labels_corrected_stats.txt  </td>     <td>The volumes (mm^3) of all defined structures with 10 different granularity levels in the native patient coordinates.  </td>
+</tr><tr>
+    <td>output  </td>  <td>Volume report files  </td>  <td>B<br>_defined_filename_286Labels_MNI_stats.txt   </td>     <td>Same as A, but after the image normalization to the MNI coordinates by linear transformation.  </td>
+</tr></tbody></table>
+<br><br>
+<blink><a href="https://braingps.mricloud.org/docs/tutorials/download_results/reports_to_use.html">  Which volume reports should be used? </a></blink>
+
+<h2> Inspect the results using ROIEditor </h2>
+<font color="aliceblue">
+The segmentation results can be inspected by using our ROIEditor that is available in <a href="http://www.mristudio.org/">www.mristudio.org</a>.<br><br> Both the native and MNI-space data can be used for the inspection purpose, but the MNI space would be more convenient because all images have the same position, orientation, and the number of slices. In addition, all segmentation in our pipeline is performed in the MNI space, which is linearly back-transferred to the native space. This transfer of the segmentation makes the appearance of the segmentation jagged in the native space. Therefore, it is recommended to use the image in the normalized (MNI) space.
+<br><br>
+All data are in Analyze format.
+</font>
+
+<!--    redo table     -->
+
+<table border="0" width="1200px"><!--CAWorks-->
+<tbody><tr>
+    <td width="25%">Once the image is loaded, then open a segmentation label file.
+<br><br>Again, the label files are in Analyze format. Choose the label file in the normalized (MNI) space.<br><br><br><br></td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/ROIEditor_1_700.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>Once the image is loaded, then open a segmentation label file.<br><br>Again, the label files are in Analyze format. Choose the label file in the normalized (MNI) space.</td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/ROIEditor_2_700.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>Then the segmentation results can be visualized. The labels are listed in the right column
+<br><br>Note that the objects have only numbers without structural names. The look-up table is provided in the output (Multilevel_lookup_table.txt).
+</td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/ROIEditor_3_700.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>One of the key features of our segmentation pipeline is the multiple granularity analysis.
+<br><br>To use this feature, press the "multilevel" button and specify the "Multilevel_Lookup_table.txt" included in the output files.
+</td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/ROIEditor_4_700.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td>Once the look-up table is loaded, segmentation results at five different granularity levels with two different hierarchical relationships can be visualized
+<br><br>The numerical report that can be obtained by pressing the "Statistics of All the Levels" is the same as "User_defined_filename_286labels_stats.txt" 
+</td>
+    <td class="main"> <a class="image" href="download_results.html" target="_blank"><img src="img/ROIEditor_5_700.png" align="center" alt="Head"></a></td>
+</tr><tr>
+</tr></tbody></table>
+
+<br><br>
+<blink><a href="https://braingps.mricloud.org/docs/tutorials/download_results/granularity_levels.html">  What are the granularity levels and how to use them? </a></blink>
+
+<h2> Our segmentation results are not perfect </h2>
+<br>
+<font color="aliceblue">
+Currently, we are beta-testing our pipeline with only two types of atlases (adult and pediatric), each contains10 or 11 multiple reference atlases. While they provide segmentation results with high quality, sometimes failure occurs. While we are working on more comprehensive atlas sets, any failure reports are highly appreciated for us to understand the pattern of failures. Below, several common errors are listed, which can be readily corrected by RoiEditor. In any case, all segmentation results should be inspected by RoiEditor
+<table border="0" width="1200px"><!--CAWorks-->
+<tbody><tr>
+    <td width="25%">For those who have intense bone marrow signals, cortical definition may leak. Using RoiEditor, these leaks can be assigned to "Area #254 (= spaces outside the brain)", which are not included in subsequent numerical reports</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/segmentation_results_1.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td width="25%">There are periventicular white matter regions which have lower intensities. There are specific ROIs that define these areas, but they may leak into the adjacent caudate. This leak can be most easily corrected (assigned to the caudate) using a series of sagittal planes.</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/segmentation_results_2.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td width="25%">In certain subjects, the fusiform gyrus wraps around the lateral region of the hippocampus and is mislabeled as a part of hippocampus. Usually it happens at about 4-5 consecutive axial slices, which can be corrected using RoiEditor</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/segmentation_results_3.png" align="center" alt="Head"></a></td>
+</tr></tbody></table><!--CAWorks-->
+
+<h2> "View Result" for online visualization</h2>
+<font color="aliceblue">
+<br>
+This option brings you to the "BrainKnowledge" interface, in which the segmentation results can be inspected in the MNI space directly through the web-interface. Unlike RoiEditor, the data need not to be downloaded for visualization. The disadvantage is that it does not provide the ROI-editing capability. However, it has several unique functions to analyze the anatomical features of individual subjects compared to population data (single subject vs population data).
+<table border="0" width="1200px"><!--CAWorks-->
+<tbody><tr>
+    <td width="25%">The image at right shows initial interface, which consists of the Image and Control Panes. The Control Pane has visualization control, granularity control, and the structural list</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/view_results_1.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td width="25%">By choosing a hierarchical type (Type I or II) and a granularity level, the brain segmentation results can be visualized as below. Similar to the "Multilevel" function of RoiEditor, hierarchical relationship of various structures is visualized as a tree structure.</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/view_results_2.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td width="25%">A structure of interest can be chosen by placing a cursor directly on the image or from the structural list in the right column. A 3D view of the selected structure is then visualized.</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/view_results_3.png" align="center" alt="Head"></a></td>
+</tr><tr>
+    <td width="25%">In the 2D views, the color coding is based on z-scores of the volumes compared to normal data. Green color represents structures smaller than the average and red means larger. The actual value with respect to the normal database as a function of age can be visualized from the contextual menu (Internal Links -&gt; Percentage plot).</td>
+    <td width="75%"> <a class="image" href="download_results.html" target="_blank"><img src="img/view_results_4.png" align="center" alt="Head"></a></td>
+
+
+
+</tr></tbody></table></font></font></body></html>
