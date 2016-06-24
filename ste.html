@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://braingps.mricloud.org/surfacelddmm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<!--     https://braingps.mricloud.org -->
+    <title>MriCloud | Brain Mapping</title>
+
+    
+    <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
+    <!-- 20131205 to make the boostrap-styled components like dropdown menus working must include the boostrap.js, 
+    and must include jquery before boostrap.js !!!!! -->
+<!--     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script> -->
+    <!-- point jquery source to local position, in case the googleapis.com link doesn't work -->
+    <script src="jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <!-- use HTML::script() function to add script file, thus will generate absolute path!!! -->
+    
+<!--     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script> -->
+<!--     <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/fontawesome/font-awesome.min.css">
+ -->
+    
+<!--    <script src="https://braingps.mricloud.org/bootstrap/js/bootstrap.min.js"></script>
+ modify the .modal classes to enable .modal-lg etc    
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/css/bootstrap.css">
+ 
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/css/bootstrap-responsive.css">
+ --> 
+
+<!-- new version bootstrap is not compatible with 20140821 page code  
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+ 
+    <link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+ 
+    --> 
+
+    
+    <script src="jquery/1.9.1/bootstrap.min.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+ 
+<!-- this theme css change the style!!!!!!!11  
+  <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/bootstrap-3.2.0/dist/css/bootstrap-theme.min.css">
+ --> 
+    
+<!--    <link media="all" type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link media="all" type="text/css" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+ 
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+-->
+    
+    <link media="all" type="text/css" rel="stylesheet" href="css/font-awesome.css">
+    <link media="all" type="text/css" rel="stylesheet" href="css/style.css">
+<!-- 
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap-theme.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+     <link media="all" type="text/css" rel="stylesheet" href="https://braingps.mricloud.org/css/style.css">
+ -->   <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+  <body>
+		        <div class="container">
+        <div class="navbar navbar-default">
+             <div class="container-fluid"> 
+            
+<!--               <a class="brand" href="/">MriCloud</a> -->
+             <div class="navbar-header">
+               <a class="navbar-brand" href="https://braingps.mricloud.org/">BrainGPS</a>
+             </div> 
+<!--               <div class="collapse nav-collapse"> -->
+<!-- -->
+            <ul class="nav navbar-nav">
+			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
+			<!-- HTML::link('home','Home') first argument is path, second argument is the displayed string of the button -->
+            <li class=""><a href="BrainGPSindex">主页</a></li>
+			<li class="dropdown">
+ 	         <a href="https://braingps.mricloud.org/surfacelddmm" class="dropdown-toggle" data-toggle="dropdown">手册<b class="caret"></b></a> 
+	        	<ul class="dropdown-menu">
+	            <li><a href="tutorial.html">T1-多图谱分割</a></li>
+	           	<li><a href="https://braingps.mricloud.org/docs/MriCloudRelease_DTI.pdf">DTI Calculation</a></li>
+	            </ul>
+			</li>
+<!--         <li class=""><a href="datasources.html">数据来源</a></li>
+             <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/lddmm">LDDMM</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/t1seg">T1Seg</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>
+              <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
+-->               
+				<li class="dropdown">
+ 		         <a href="https://braingps.mricloud.org/surfacelddmm" class="dropdown-toggle" data-toggle="dropdown">T1图像多图谱分割<b class="caret"></b></a> 
+		        	<ul class="dropdown-menu">
+<!-- 	              <li class="active"><a href="https://braingps.mricloud.org/lddmm">LDDMM</a></li> -->
+		        
+<!--              <li class=""><a href="https://braingps.mricloud.org/t1prep">T1-Brain/Skull/CSF/Ventricle</a></li> -->
+	              <li class=""><a href="t1prep.html">T1-多图谱分割</a></li>
+<!--              <li class=""><a href="https://braingps.mricloud.org/t1seg">T1-250</a></li> -->
+		    	  <li class=""><a href="t1batch.html">T1-多图谱分割批处理</a></li>
+	              		    	              </ul>
+		      </li>
+				<li class="dropdown">
+ 		         <a href="https://braingps.mricloud.org/surfacelddmm" class="dropdown-toggle" data-toggle="dropdown">DTI<b class="caret"></b></a> 
+		        	<ul class="dropdown-menu">
+		      	      <li class=""><a href="dtical.html">DTI 参数计算</a></li>
+		      	      <li class=""><a href="dtimultiatlasseg.html">DTI 多图谱分割</a></li>
+		      	      </ul>
+      	      </li>
+	      	  <li class=""><a href="fmri.html">FMRI</a></li> 	              
+	      	  <li class=""><a href="asl.html">ASL</a></li> 	              
+      	      		          	       	              
+      	      <li class="dropdown">
+ 		         <a href="https://braingps.mricloud.org/surfacelddmm" class="dropdown-toggle" data-toggle="dropdown">表面绘制<b class="caret"></b></a> 
+	        	<ul class="dropdown-menu">
+              	<li class="active"><a href="ste.html">从人群中建立表面模板</a></li> 	              
+              	<li class=""><a href="surfacelddmm.html">将表面模板映射到人群中</a></li> 	              
+<!--               	<li class=""><a href="https://braingps.mricloud.org/ste">STE</a></li> 	              
+              	<li class="active"><a href="https://braingps.mricloud.org/surfacelddmm">surface LDDMM</a></li> --> 	              
+              	</ul>
+		      </li>
+<!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
+	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
+	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
+		      <li class=""><a href="datasources.html">数据来源</a></li>
+		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		      
+ <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
+              <li class=""><a href="datasources.html">数据来源</a></li>
+              <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
+-->
+              <li class=""><a href="BGSabout.html">关于</a></li>
+              <li class=""><a href="BGSterms.html">条款</a></li>
+              <li class=""><a href="BGScontact.html">联系我们</a></li>
+                <li class="nav navbar-nav navbar-right">
+                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
+                </li>
+              </ul>
+          </div><!--/.nav-collapse -->
+      </div>
+      </div>
+
+   <div class="container">
+    <div class="nav navbar-default">
+
+        
+<h4>Upload and shape template estimation</h4>
+
+	<div>
+		<a href="https://braingps.mricloud.org/ste#footnote"><i class="icon-info-sign" id="foottip"></i><br></a>
+		<div id="footnote" style="display:none">
+            <h4>DiffeoMap STE (Surface Template Estimation)</h4>
+            <p><strong> Overview:</strong> DiffeoMaps offers the high throughput Software as a Service for processing populations of triangulated meshes and creating a template surface which is centered to the population. Surface Template Estimation (STE) uses a predefined hyper-template, deforming the hyper-template so as to maximize the probability of observing the population of surfaces given the estimated template.</p>
+            <p><strong>Algorithm:</strong> The MAP algorithm implemented in the SaaS posulates that the unknown template population surface to be estimated solves the maximum a-posteriori (MAP) problem modeling the observed population of surfaces as diffeomorphically deformed versions of the unknown template with noise. The MAP algorithm iteratively deforms the hyper-template via large deformation diffeomorphic surface mapping so as to maximize the fused likelihood of having observed the population of surfaces as  described in A Bayesian Generative Model for Surface Template Estimation by Ma, Miller, and Younes, 2010; http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2946602/.</p>
+            <p>Steps:</p>
+            1)	Upload Population of Surfaces<br>
+            2)	Select Processing Server<br>
+            3)	Select Rigid Registration Flag<br>
+            4)	Submit<br>
+            5)	Retrieve result<br>
+            Surface Format:  Surfaces should be stored either in VTK Polydata format (http://www.vtk.org/VTK/img/file-formats.pdf), with extension .vtk, or in BYU format (http://www.egmodels.de/formats/Format_Byu.html), with extension .byu.
+            Upload Population of Surfaces:<br>
+            Press the +zip push button to select your population of surfaces stored as a zip archive.<br>
+            Use the Select Processing Server dropdown menu to select the server to be used.<br>
+            Use the Rigid Registration Prior To Template Estimation flag dropdown menu to select ‘true’ or ‘false’.<br>
+            Hit Submit.<br>
+
+            <p>Output:</p>
+            When the job is complete, you will receive an e-mail with the link to the results. The result consists of the following files:<br>
+            1) stg_output_final_template.byu - the template surface in byu format.<br>
+            2) stg_output_final_template.alpha – the momentum ‘alpha’ (11 X n X 3 array, where n is the number of vertices on the hyper-template), stored in the ASCII format.  This is the parameterization of the diffeomorphism, which maps the hyper-template to the template.<br>		
+
+        </div>
+	</div>
+<form method="POST" action="./ste_files/ste.htm" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="k6tT3WyNDSoQB7ikCSn21PEUkuMtLZiqzidKAvxa">
+	<!-- as the bootstrap changes the classname will change -->
+    <!-- The fileinput-button span is used to style the file input field as button -->
+    <p>Upload hypertemplate file</p>
+    
+    <input name="service_type" type="hidden" value="STE">
+    
+    <span class="btn btn-success fileinput-button">
+        <i class="icon-plus icon-white"></i>
+        <span>byu/vtk</span>
+        <input type="file" name="hypertemplate_or_template_file">
+    </span>
+	
+	<p>Zip your surfaces in one file and upload, <inline style="color: #ff0000"> maximum 96 surfaces </inline></p>
+    <p>To start over, refresh the page
+    </p>
+    <p></p>
+    <span class="btn btn-success fileinput-button">
+        <i class="icon-plus icon-white"></i>
+        <span>zip</span>
+        <input type="file" name="zip_file" id="zip_file">
+    </span>
+    <br>
+    <br>
+    <p><strong>Files selected</strong></p>
+    <div id="files" class="files"></div>
+    <br>
+       <p class="subheading">Select processing server</p>
+        <select name="processing_serverid" id="processing_serverid" class="form-control span5">
+                          <option value="ICM">ICM</option>
+                          <option value="Gordon">Gordon</option>
+                    </select>
+        <p></p>
+<!--  -->      <p class="subheading">rigid registration prior to template estimation</p>
+        <select name="rigid_reg_option" id="rigid_reg_option" class="form-control span3">
+                          <option value="false">false</option>
+                          <option value="true">true</option>
+                    </select>
+        <div id="left_right_patterns" style="display:none">
+        	<br>
+        	<p class="subheading">Left pattern</p>
+        	<input type="text" name="left_pattern" value="" class="form-control span5">
+        	<br>
+        	<p class="subheading">Right pattern</p>
+        	<input type="text" name="right_pattern" value="" class="form-control span5">        	
+        </div> 
+        <br>
+        <p></p>
+        <p class="subheading">Description</p>
+        <input type="text" name="description" value="write job description here" class="form-control span5">        
+        
+    <!-- The global progress bar -->
+        <p></p>
+        <p><strong>Progress</strong></p>
+    <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
+        <br>    
+    <button class="btn" id="pb">Submit</button>
+    <br>
+
+
+</form><script>var filetyperegex = /(\.|\/)(byu|vtk|zip)$/i ;</script>    
+<!-- check the number of surfaces in zipped files -->
+<script>var max_surfaces = 96;</script>    
+<script src="./ste_files/zip.js"></script>
+<script src="./ste_files/ste_zip_helper.js"></script>
+<script>
+$("#rigid_reg_option").change(function(){
+//	alert( $(this).val() );
+	switch ($(this).val())
+	{
+		case 'true':
+			// .css() is to get not to set the value !!!!111
+			$('#left_right_patterns').show();
+			break;
+		case 'false':
+			$('#left_right_patterns').hide();
+			break;
+	}
+});
+</script>
+        
+    </div>
+    </div>
+
+    <div class="container">
+    <footer>
+  		
+    <div class="container text-center">
+        <hr>
+<p>MriCloud  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<a href="https://braingps.mricloud.org/ste#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
+		</p><div id="mricloud_tip" style="display:none">
+		<p>	MriCloud 1.0</p>
+		<p>Copyright 2013 AnatomyWorks LLC, <a href="https://www.anatomyworks.com/">www.anatomyworks.com</a>
+</p><p>This website was created by AnatomyWorks. BrainGPS algorithms and brain atlas resources are licensed from Johns Hopkins University.</p>
+<p>MriCloud is not intended for clinical use and should be used for research purpose only.</p>
+        </div>
+<!-- put all the content and behavior of the module in one place -->
+        
+<script src="./ste_files/jquery.qtip.min.js"></script>
+<link rel="stylesheet" href="https://braingps.mricloud.org/qtip/jquery.qtip.min.css">
+	<script> 	
+    // tooltip http://qtip2.com/demos
+    $('#mricloudtip').each(function() {
+        $(this).qtip({
+            content: {
+//                text: $(this).next('.tooltiptext')
+                  text: $('#mricloud_tip').html()
+            },
+            position: {
+                target: 'mouse', // Position it where the click was...
+                adjust: { mouse: false } // ...but don't follow the mouse
+            }           
+            
+        });
+    });   
+</script><p></p>
+<!--  <a href="#" data-toggle="tooltip" title="MRICloud  DiffeoMap 1.0
+Copyright 2013 AnatomyWorks Inc., www.AnatomyWorks.com
+MRICloud DiffeoMap is based on the AnatomyWorks patented DiffeoMAP GPS image analysis technologies for medical imaging and atlas based semantic representation of dense medical imagery. It enables any researcher working in the field of Computational Anatomy in Medical imaging to parse MR imagery into an ontological labeling based on parcellated atlas fields provided by researchers at Johns Hopkins University Susumu Mori from the Department of Radiology in the School of Medicine and Michael Miller from the Center for Imaging Science in the Whiting School of Engineering.
+The DIffeoMap solutions for segmentation and image analysis currently support a large number of disease and age matched atlases built with a common neuroscience ontology.
+MRICloud DiffeoMAP is licensed for use for research purposes only.
+MRICloud is not intended for clinical use, and makes no representation that it is a clinically approved medical device. Analysis result must not be used for any purpose other than research. Each licensed user is issued with a corresponding license agreement which is either accepted or declined during the initial use of the software. If declined, the user cannot use MRICloud. 
+If you have questions, please do not hesitate to contact us at …. or at info@MRICloud.org.
+"><i class="icon-info-sign icon-large"></i></a>  		 
+        <a class="nounderline" href="#" data-toggle="tooltip" title="GETTING STARTED
+To enroll, if you are an MRIStudio user then the system will recognize you. If you are a new user with a Gmail account then MRICloud supports opened.
+SEGMENTATION
+MRICloud currently supports T1 and DTI segmentation.
+T1-Brain/Skull/Ventricle/CSF provides a 4-5 label segmentation in native coordinates giving the user access to Brain (G+W) compartment, Skull compartment, Ventricle compartment, and CSF compartment. The service returns the following metadata in Native coordinates: … To use the service, select from the drop down SEGMENTATION button T1-Brain… Then select the dataset to be uploaded from either disk or an XNAT source. The status of your job will be in the Status section.
+T1-250 provides a 250 label segmentation in native coordinates giving the user access to all such compartments. It’s use is the same as above.
+DTI provides a …..
+  		"><i class="icon-question-sign icon-large"></i></a>-->
+        
+        </div>
+    </footer>
+    </div>
+    
+    
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>  -->
+<script src="./ste_files/jquery.min.js" type="text/javascript"></script>
+<script src="./ste_files/jquery.ui.widget.js"></script>
+<script src="./ste_files/jquery.iframe-transport.js"></script>
+<script src="./ste_files/jquery.fileupload.js"></script>
+<script src="./ste_files/jquery.fileupload-process.js"></script>
+<script src="./ste_files/jquery.fileupload-validate.js"></script>
+
+<script>
+
+var num_added = 0;
+var added = 0;
+var all_data = {};
+
+function getName(Object, name) {
+    return Object[name];
+}
+$(function () {
+    'use strict';
+        var uploadButton = $('<button/>')
+            .addClass('btn')
+            .prop('disabled', true)
+            .text('Processing...')
+            .on('click', function () {
+                var $this = $(this),
+                    data = $this.data();
+                $this
+                    .off('click')
+                    .text('Abort')
+                    .on('click', function () {
+                        $this.remove();
+                        data.abort();
+                    });
+                data.submit().always(function () {
+                    $this.remove();
+                });
+            });
+    $('#fileupload').fileupload({
+        dataType: 'json', autoUpload: false,
+        singleFileUploads: false,
+        acceptFileTypes: filetyperegex,
+        maxFileSize: 200000000, // 200 MB
+        disableImageResize: true,
+        // disable pasting file, pasting any string in the input box will trigger the fileuploadadd event handler, 
+        pasteZone: null
+    }).on('fileuploadadd', function (e, data) {
+        data.context = $('#pb').text('Upload')
+            .click(function () {
+                data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+                data.submit();
+            });
+        data.context = $('<div/>').appendTo('#files');
+        $.each(data.files, function (index, file) {
+            var node = $('<p/>')
+                    .append($('<span/>').text(file.name));
+            if (!index) {
+                node
+                    .append('<br>');
+                    <!--.append(uploadButton.clone(true).data(data));-->
+            }
+            node.appendTo(data.context);
+        });
+        num_added++;
+    }).on('fileuploadprocessalways', function (e, data) {
+        var index = data.index,
+            file = data.files[index],
+            node = $(data.context.children()[index]);
+        if (file.preview) {
+            node
+                .prepend('<br>')
+                .prepend(file.preview);
+        }
+        if (file.error) {
+            node
+                .append('<br>')
+                .append(file.error);
+        }
+        if (index + 1 === data.files.length) {
+            data.context.find('button')
+                .text('Upload')
+                .prop('disabled', !!data.files.error);
+        }
+    }).on('fileuploadprogressall', function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+//        $('#progress .bar').css( 'width', progress + '%');
+        $('#progress .progress-bar').css( 'width', progress + '%');
+        })
+        .on('fileuploaddone', function (e, data) {
+        data.context.text('Upload complete. Please check the status of your job at My Job Status');
+        $.each(data.files, function (index, file) {
+        //    alert(JSON.stringify(file));
+            var link = $('<a>') .attr('target','_blank') .prop('href', file.url);
+            $(data.context.children()[index]).wrap(link);
+        });
+    }).on('fileuploadsubmit', function (e, data) {
+/* */   if(added < num_added)
+        {
+            if (added == 0)
+            {
+                all_data = data;
+            }
+            else
+            {
+                $.each(data['files'], function(i, file){
+                    all_data['files'].push(file);
+                });
+                $.each(data['context'], function(i, context){
+                    all_data['context'].push(context);
+                });
+                $.each(data['fileInput'], function(i, context){
+                    all_data['fileInput'].push(context);
+                });
+                $.each(data['form'], function(i, context){
+                    all_data['form'].push(context);
+                });
+                $.each(data['paramName'], function(i, context){
+                    all_data['paramName'].push(context);
+                });
+            }
+            added++;
+            if (added == num_added)
+            {
+                added++;
+                all_data.submit();
+            }
+            return false;
+            
+        }
+    }).on('fileuploadsend', function (e, data) {
+        num_added = 0; added = 0;
+    }).on('fileuploadfail', function (e, data) {
+        // display the error message in a message box
+    	alert('Error: '+data._response.jqXHR.responseText+' Refresh the page to reupload.' );        
+        $.each(data.files, function (index, file) {
+            var error = $('<span/>').text(file.error);
+            $(data.context.children()[index])
+                .append('<br>')
+                .append(error);
+        });
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+    // progress bar should work with fileuploadprogressall function, it's for bootstrap 3.2.0
+    $('#progress').addClass( "progress")
+    .html('<div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>');
+        
+
+    
+});
+</script>
+    <!-- have to yield the sections for javascript, the partial blades must put javascript include source files at the end!
+    	if they are in the middle of the page, the libraries will not be loaded when calling jquery on document ready function!
+    	the order the javascript source files loaded matters!!!!!!!
+    	clinicalformjs must be load last to enable expandable feature!!!!!!!11
+     --> 
+                    
+  
+</body></html>
