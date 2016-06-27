@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>MriCloud | Brain Mapping</title>
+    <title>迈格云平台 | FMRI</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -67,7 +67,7 @@
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
              <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">BrainGPS</a>
+               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
              </div> 
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
@@ -143,74 +143,74 @@
    <div class="container">
     <div class="nav navbar-default">
 
-        <h4>Resting State FMRI Processing</h4>
+        <h3>静息态功能磁共振成像处理</h3>
 <!--	<div>
 	If your images are in DICOM format, please first convert them to Analyze format.
 	Click <a href="tools/Dcm2Analyze.exe" >here</a> to download a conversion tool for Windows OS						
 	</div>
 	--> 		
 <div><p>
+首先请使用我们为您提供的用于将静息态功能磁共振图像转换为4D解析格式图像的工具。
+<br>下载DICOM转Analyze格式转换器：<a href="https://braingps.mricloud.org/tools/Dcm2AnalyzeWin_Sep_2015.exe">Windows操作系统</a> 或者飞利浦公司生产的par/rec转Analyze转换器<a href="https://braingps.mricloud.org/tools/ParRec2Analyze.exe">Windows操作系统</a>。
 
-Use the tool provided by our website to convert resting state fMRI image series into single 4-D Analyze image and upload.<br>
-Download the DICOM to Analyze conversion tool for <a href="https://braingps.mricloud.org/tools/Dcm2AnalyzeWin_Sep_2015.exe">WindowsOS</a> or Philips par/rec to Analyze conversion tool for <a href="https://braingps.mricloud.org/tools/ParRec2Analyze.exe">WindowsOS</a> .
 </p>
 </div><form method="POST" action="https://braingps.mricloud.org/fmri" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>To start over, refresh the page</p>    
-	<!-- as the bootstrap changes the classname will change -->    <p><strong>Upload the resting-state fMRI (single 4-D Analyze .img and .hdr files)</strong></p>
+    <p>如果需要全部重新设置，您可以刷新当前界面</p>    
+	<!-- as the bootstrap changes the classname will change -->    <p><strong>上传静息态fMRI图像(单个的4-D解析格式图像文件.img及头文件.hdr)</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>hdr</span>
+        <span>头文件(.hdr)</span>
         <input type="file" name="rest_hdr">
     </span>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>img</span>
+        <span>图像文件(.img)</span>
         <input type="file" name="rest_img">
     </span>
     <br>
-    <p><strong>Upload the anatomical image (Analyze format)</strong></p>
+    <p><strong>上传解剖学图像(解析格式)</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>hdr</span>
+        <span>头文件(.hdr)</span>
         <input type="file" name="t1_hdr">
     </span>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>img</span>
+        <span>图像文件(.img)</span>
         <input type="file" name="t1_img">
     </span>
     
     <br>
-    <p><strong>Upload the parcellation map (Analyze format)</strong></p>
+    <p><strong>上传分割图像（解析格式）</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>hdr</span>
+        <span>头文件(.hdr)</span>
         <input type="file" name="parcel_hdr">
     </span>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>img</span>
+        <span>图像文件(.img)</span>
         <input type="file" name="parcel_img">
     </span>
     
     <br>
-    <p><strong>Upload the lookup table of parcellation map</strong></p>
+    <p><strong>上传分割图像的ROI查找表</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>txt</span>
+        <span>文本文件(.txt)</span>
         <input type="file" name="lut_txt">
     </span>
     <br>
-    <p><strong>Files selected</strong></p>
+    <p><strong>文件选择</strong></p>
     <div id="files" class="files"></div>
     <br>
-        <p class="subheading">Enter TR of the experiment</p>
+        <p class="subheading">输入扫描的TR数</p>
         <!-- default values set -->
    		<input type="number" name="tr" value="2" class="form-control span3">
         
-		<p class="subheading">Select processing server</p>
+		<p class="subheading">选择处理服务器</p>
 <!--         <select name="processing_serverid" id="processing_serverid" class="form-control span5"> -->
 		<!-- upon Susumu's request gray out the option of processing servers on mricloud-->
         <select name="processing_serverid" id="processing_serverid" class="form-control span5">	
@@ -219,14 +219,14 @@ Download the DICOM to Analyze conversion tool for <a href="https://braingps.mric
                     </select>
         <p></p>
         <p></p>
-        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">添加您的描述: </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">                
     <!-- The global progress bar -->
         <p></p>
-        <p><strong>Progress</strong></p>
+        <p><strong>处理进度</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
         <br>    
-    <button class="btn" id="pb">Submit</button>
+    <button class="btn" id="pb">提交</button>
     <br>
 
 
@@ -240,7 +240,7 @@ Download the DICOM to Analyze conversion tool for <a href="https://braingps.mric
   		
     <div class="container text-center">
         <hr>
-<p>MriCloud  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/fmri#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

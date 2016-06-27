@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>MriCloud | Brain Mapping</title>
+    <title>MriCloud | ste</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -67,7 +67,7 @@
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
              <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">BrainGPS</a>
+               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
              </div> 
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
@@ -144,7 +144,7 @@
     <div class="nav navbar-default">
 
         
-<h4>Upload and shape template estimation</h4>
+<h3>上传文件并估计形态模板</h3>
 
 	<div>
 		<a href="https://braingps.mricloud.org/ste#footnote"><i class="icon-info-sign" id="foottip"></i><br></a>
@@ -175,7 +175,7 @@
 <form method="POST" action="./ste_files/ste.htm" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="k6tT3WyNDSoQB7ikCSn21PEUkuMtLZiqzidKAvxa">
 	<!-- as the bootstrap changes the classname will change -->
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>Upload hypertemplate file</p>
+    <p>上传模板文件</p>
     
     <input name="service_type" type="hidden" value="STE">
     
@@ -185,30 +185,29 @@
         <input type="file" name="hypertemplate_or_template_file">
     </span>
 	
-	<p>Zip your surfaces in one file and upload, <inline style="color: #ff0000"> maximum 96 surfaces </inline></p>
-    <p>To start over, refresh the page
-    </p>
+	<p>将您的表面文件压缩到一个压缩包中并上传<inline style="color: #ff0000"> 最多可以上传96个表面文件</inline></p>
+    <p>如果需要全部重新设置，您可以刷新当前界面</p>
     <p></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>zip</span>
+        <span>压缩包文件(.zip)</span>
         <input type="file" name="zip_file" id="zip_file">
     </span>
     <br>
     <br>
-    <p><strong>Files selected</strong></p>
+    <p><strong>文件选择</strong></p>
     <div id="files" class="files"></div>
     <br>
-       <p class="subheading">Select processing server</p>
+       <p class="subheading">选择处理服务</p>
         <select name="processing_serverid" id="processing_serverid" class="form-control span5">
                           <option value="ICM">ICM</option>
                           <option value="Gordon">Gordon</option>
                     </select>
         <p></p>
-<!--  -->      <p class="subheading">rigid registration prior to template estimation</p>
+<!--  -->      <p class="subheading">刚体配准是否优于模板估计？</p>
         <select name="rigid_reg_option" id="rigid_reg_option" class="form-control span3">
-                          <option value="false">false</option>
-                          <option value="true">true</option>
+                          <option value="false">否</option>
+                          <option value="true">是</option>
                     </select>
         <div id="left_right_patterns" style="display:none">
         	<br>
@@ -220,15 +219,15 @@
         </div> 
         <br>
         <p></p>
-        <p class="subheading">Description</p>
+        <p class="subheading">添加您的描述</p>
         <input type="text" name="description" value="write job description here" class="form-control span5">        
         
     <!-- The global progress bar -->
         <p></p>
-        <p><strong>Progress</strong></p>
+        <p><strong>处理进度</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
         <br>    
-    <button class="btn" id="pb">Submit</button>
+    <button class="btn" id="pb">提交</button>
     <br>
 
 
@@ -261,7 +260,7 @@ $("#rigid_reg_option").change(function(){
   		
     <div class="container text-center">
         <hr>
-<p>MriCloud  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/ste#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

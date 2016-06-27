@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>MriCloud | Brain Mapping</title>
+    <title>迈格云平台 | DTI多图谱分割</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -67,7 +67,7 @@
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
              <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">BrainGPS</a>
+               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
              </div> 
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
@@ -144,15 +144,14 @@
     <div class="nav navbar-default">
 
         
-<h4>DTI MultiAtlas Segmentation</h4>
-	<p>First time user? Manual is available <a href="https://braingps.mricloud.org/docs/tutorials/mricloud.html" target="_blank">here</a>.</p>
+<h3>DTI 多图谱分割</h3>
+	<p>您可以查阅 <a href="tutorial.html" target="_blank">手册</a>.</p>
 
 <form method="POST" action="https://braingps.mricloud.org/dtimultiatlasseg" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 	<!-- as the bootstrap changes the classname will change -->	
 	
 	
-	<div> <p><strong>Warning</strong>: Due to limited storage space, all jobs and their results will 
-be deleted from our server after 60 days from submission date, please download results in time.
+	<div> <p><strong>请注意</strong>： 因为存储空间限制，您的处理结果将会在任务提交后的60天删除，请及时下载您的处理结果。
 </p></div>	<!--	<div>
 	If your images are in DICOM format, please first convert them to Analyze format.
 	Click <a href="tools/Dcm2Analyze.exe" >here</a> to download a conversion tool for Windows OS						
@@ -167,42 +166,42 @@ be deleted from our server after 60 days from submission date, please download r
 </p>
  -->
  
-<p> All visualization in MriCloud follows the Radiology convention: the image left is the patient right. We are aware of inconsistency in the definitions of image orientations in DICOM, Analyze, and other file types. We guarantee the right-left orientation ONLY WHEN the output Analyze files from DtiCloud: DTI Processing pipeline are used. The required input files are;</p>
-<p>1)	b0 image (subjectname_b0.img, subjectname_b0.hdr)</p>
+<p> 在DTI多图谱分割过程中，您需要上传的压缩包中应包含以下信息：</p>
+<p>1)	b0 imgae (subjectname_b0.img, subjectname_b0.hdr)</p>
 <p>2)	Mean diffusion weighted images (subjectname_dwi.img, subjectname_dwi.hdr)</p>
 <p>3)	Tensor file (subjectname_tensor.dat), which is a raw matrix with 6xD1xD2xD3)</p>
-<p> subjectname can be anything (no spaces)</p>
-<p>All images need to be axial. These files need to be zipped into one file (zipfilename can be anything (no spaces)) in this order. 
+<p> 对于输入文件的名字没有特殊要求，但请注意不要包含空格</p>
+<p>所有输入的图像应该是axial成像角度，并且放入到一个压缩包中，请注意，压缩包的名称同样不应含有空格。
 </p>
 
 </div>	<!-- put form and picture side by side 
 	http://stackoverflow.com/questions/14148134/how-to-position-three-div-elements-side-by-side-across-a-webpage -->	
 	<div style="float: left; width: 50%;">
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>To start over, refresh the page</p>
-    <p><strong>Upload zip file</strong></p>
+    <p>如果需要全部重新设置，您可以刷新当前界面</p>
+    <p><strong>上传压缩包文件</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>.zip</span>
+        <span>压缩包(.zip)</span>
         <input type="file" name="zip">
     </span>
     <br>
-    <p><strong>Files selected</strong></p>
+    <p><strong>文件选择</strong></p>
     
     <br>
     <div id="files" class="files"></div>
 	<br>
-       <p class="subheading">Select processing server</p>
+       <p class="subheading">S选择处理服务器</p>
         <select name="processing_serverid" id="processing_serverid" class="form-control span5">
                           <option value="Gordon">Computational Anatomy Science Gateway</option>
                     </select>
         <p></p>
-       <p class="subheading">Select Slice Type</p>
+       <p class="subheading">选择成像角度</p>
         <select name="slice_type" id="" slice_type""="" class="form-control span7">
                           <option value="0">Axial</option>
                     </select>
         <br>
-        <p class="subheading">Select Atlas</p>
+        <p class="subheading">选择分割用图谱信息</p>
         <select name="atlas_name" id="atlas_name" class="form-control span7"> --&gt;
         <!-- elements without a name in a form will not be in submitted data
         <select id="atlas_name" class="form-control span7"> -->
@@ -210,14 +209,14 @@ be deleted from our server after 60 days from submission date, please download r
                           <option value="1">Adult_168labels_8atlases_V1</option>
                     </select>
         <br>
-        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">添加您的描述： </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">    <!-- The global progress bar -->
     
-        <p><strong>Progress</strong></p>
+        <p><strong>处理进度</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
 
     <br>
-    <button class="btn" id="pb">Submit</button>
+    <button class="btn" id="pb">提交</button>
     <br>
     </div>
 
@@ -232,7 +231,7 @@ be deleted from our server after 60 days from submission date, please download r
   		
     <div class="container text-center">
         <hr>
-<p>MriCloud  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/dtimultiatlasseg#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

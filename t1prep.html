@@ -67,7 +67,7 @@
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
              <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">BrainGPS</a>
+               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
              </div> 
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
@@ -266,24 +266,15 @@
 	</div>
 	--> 		
 <div><p>
+迈格云平台使用的所有可视化技术都遵循同一个放射学惯例：
+所有影像的持有权都归病人所有。鉴于在图像来源中，DICOM文件，Analyze文件以及其他格式文件之间的不一致性
+我们强烈推荐您根据自己的操作系统和DICOM文件形式选择合适的转换器：<a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe">Windows操作系统</a> 或 <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg">Mac操作系统</a>。
 
-All visualization in MriCloud follows the Radiology convention: 
-the image left is the patient right. We are aware of inconsistency in the definitions of 
-image orientations in DICOM, Analyze, and other file types. We guarantee the right-left 
-orientation ONLY WHEN the raw DICOM files FROM scanners (not from PACS and other data 
-archiving systems) are converted to the Analyze format using the programs we offer. 
-According to your operating systems and DICOM formats, 
-download the program for <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe">WindowsOS</a> or <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg">MacOS</a>. 
-
-If the data are exported from other software or the images are touched by external software 
-during the preparation, the users have the responsibility to identify the right-left orientation, 
-regardless of our labeling. This can be done by inspecting the images in our output files and 
-compare them with another visualization program you trust, preferably the scanner vendors’ console or 
-workstations.</p>
+</p>
 </div>	<!-- put form and picture side by side 
 	http://stackoverflow.com/questions/14148134/how-to-position-three-div-elements-side-by-side-across-a-webpage -->	
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>To start over, refresh the page</p>
+    <p>如果需要全部重新设置，您可以刷新当前界面</p>
     <table style="width:100%">
     	<tbody><tr>
 			<td width="50%">
@@ -431,14 +422,14 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
                           <option value="Gordon">Computational Anatomy Science Gateway</option>
                     </select>
         <p></p>
-       <p class="subheading">Select Slice Type</p>
+       <p class="subheading">选择成像角度</p>
         <select name="slice_type" id="" slice_type""="" class="form-control span7">
                           <option value="1">Sagittal</option>
                           <option value="0">Axial</option>
                           <option value="2">Sagittal data converted to Axial</option>
                     </select>
         <br>
-        <p class="subheading">Select Atlas *</p>
+        <p class="subheading">选择分割用图谱信息 *</p>
         <select name="atlas_name" id="atlas_name" class="form-control span7"> --&gt;
         <!-- elements without a name in a form will not be in submitted data
         <select id="atlas_name" class="form-control span7"> -->
@@ -453,14 +444,14 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
                           <option value="8">Adult50_90yrs_283Labels_19atlases_M2_V9A</option>
                     </select>
         <br>
-        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">添加您的描述： </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">    <!-- The global progress bar -->
     
-        <p><strong>Progress</strong></p>
+        <p><strong>处理进度</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
 
     <br>
-    <button class="btn" id="pb">Submit</button>
+    <button class="btn" id="pb">提交</button>
     <br>
 	    </td>
 	    <td width="50%">
@@ -477,15 +468,14 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
 <div>
 <br><br>
 <p>
-* The atlas name consists of "Age range" + "The number of defined structures" + "The number of atlases" + ("Fusion algorithm") + "Atlas version".
+* 图谱信息包含“年龄范围”+“图谱中的结构数量”+“图谱数量”+（“融合算法”）+“图谱版本”
 <br>
-For the "Fusion algorithm" section indicates the following:
+“融合算法”部分暗示着以下的信息：
 <br>
-M1 or not specified: The fusion algorithm follows the method described by Tang et al (1).
-
+M1或没有特别说明：使用Tang等人(1)提出的融合算法。
 <br>
-M2: The final atlas-fusion step of this pipeline uses algorithms that was kindly provided by Drs. Hongzhi Wang and Paul Yushkevich 
-(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>). The details of the algorithm can be found in a reference below (2).
+M2：最终融合步骤由Drs. Hongzhi Wang 和 Paul Yushkevich提供(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>)。
+算法的具体细节可以在(2)中查阅。
 <br>
 <small>(1) Tang, X., K. Oishi, A. V. Faria, A. E. Hillis, M. S. Albert, S. Mori and M. I. Miller (2013). "Bayesian Parameter Estimation and Segmentation in the Multi-Atlas Random Orbit Model." PLOS ONE 8(6): e65591, 3688886
 <br>
