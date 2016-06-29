@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>MriCloud | ste</title>
+    <title>MriCloud | Brain Mapping</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -58,7 +58,16 @@
  -->   <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+  </head>
   </head>
   <body>
 		        <div class="container">
@@ -66,15 +75,13 @@
              <div class="container-fluid"> 
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+         
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
 			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
 			<!-- HTML::link('home','Home') first argument is path, second argument is the displayed string of the button -->
-            <li class=""><a href="BrainGPSindex">主页</a></li>
+            <li class=""><a href="BrainGPSindex.html">主页</a></li>
 			<li class="dropdown">
  	         <a href="https://braingps.mricloud.org/surfacelddmm" class="dropdown-toggle" data-toggle="dropdown">手册<b class="caret"></b></a> 
 	        	<ul class="dropdown-menu">
@@ -122,29 +129,21 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
 		      
- <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
-              <li class=""><a href="datasources.html">数据来源</a></li>
-              <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
--->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+		    		                <li class=""><a href="profile.html">我的个人信息</a></li>	
+<li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>									
+		      
+
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
-<h3>上传文件并估计形态模板</h3>
+<h4>Upload and shape template estimation</h4>
 
 	<div>
 		<a href="https://braingps.mricloud.org/ste#footnote"><i class="icon-info-sign" id="foottip"></i><br></a>
@@ -175,7 +174,7 @@
 <form method="POST" action="./ste_files/ste.htm" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="k6tT3WyNDSoQB7ikCSn21PEUkuMtLZiqzidKAvxa">
 	<!-- as the bootstrap changes the classname will change -->
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>上传模板文件</p>
+    <p>Upload hypertemplate file</p>
     
     <input name="service_type" type="hidden" value="STE">
     
@@ -185,29 +184,30 @@
         <input type="file" name="hypertemplate_or_template_file">
     </span>
 	
-	<p>将您的表面文件压缩到一个压缩包中并上传<inline style="color: #ff0000"> 最多可以上传96个表面文件</inline></p>
-    <p>如果需要全部重新设置，您可以刷新当前界面</p>
+	<p>Zip your surfaces in one file and upload, <inline style="color: #ff0000"> maximum 96 surfaces </inline></p>
+    <p>To start over, refresh the page
+    </p>
     <p></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>压缩包文件(.zip)</span>
+        <span>zip</span>
         <input type="file" name="zip_file" id="zip_file">
     </span>
     <br>
     <br>
-    <p><strong>文件选择</strong></p>
+    <p><strong>Files selected</strong></p>
     <div id="files" class="files"></div>
     <br>
-       <p class="subheading">选择处理服务</p>
+       <p class="subheading">Select processing server</p>
         <select name="processing_serverid" id="processing_serverid" class="form-control span5">
                           <option value="ICM">ICM</option>
                           <option value="Gordon">Gordon</option>
                     </select>
         <p></p>
-<!--  -->      <p class="subheading">刚体配准是否优于模板估计？</p>
+<!--  -->      <p class="subheading">rigid registration prior to template estimation</p>
         <select name="rigid_reg_option" id="rigid_reg_option" class="form-control span3">
-                          <option value="false">否</option>
-                          <option value="true">是</option>
+                          <option value="false">false</option>
+                          <option value="true">true</option>
                     </select>
         <div id="left_right_patterns" style="display:none">
         	<br>
@@ -219,15 +219,15 @@
         </div> 
         <br>
         <p></p>
-        <p class="subheading">添加您的描述</p>
+        <p class="subheading">Description</p>
         <input type="text" name="description" value="write job description here" class="form-control span5">        
         
     <!-- The global progress bar -->
         <p></p>
-        <p><strong>处理进度</strong></p>
+        <p><strong>Progress</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
         <br>    
-    <button class="btn" id="pb">提交</button>
+    <button class="btn" id="pb">Submit</button>
     <br>
 
 
@@ -260,7 +260,7 @@ $("#rigid_reg_option").change(function(){
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/ste#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

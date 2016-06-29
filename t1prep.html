@@ -58,17 +58,22 @@
  -->   <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
 		        <div class="container">
         <div class="navbar navbar-default">
              <div class="container-fluid"> 
             
-<!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
@@ -122,25 +127,16 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		      <li class=""><a href="profile.html">我的个人信息</a></li>
+		    		                <li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>					          
 		      
- <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
-              <li class=""><a href="datasources.html">数据来源</a></li>
-              <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
--->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+        
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
@@ -257,7 +253,7 @@
 </script></h4>		
 	<p>首次使用迈格云平台？请看 <a href="https://braingps.mricloud.org/docs/tutorials/mricloud.html" target="_blank">手册</a>.</p>
 
-<form method="POST" action="https://braingps.mricloud.org/t1prep" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
+<form method="POST" action="myjobstatus.html" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 	<!-- as the bootstrap changes the classname will change -->	
 	<div> <p><strong>请注意</strong>：因为存储空间限制，您的处理结果将会在任务提交后的60天删除，请及时下载您的处理结果。 
 </p></div>	<!--	<div>
@@ -266,15 +262,15 @@
 	</div>
 	--> 		
 <div><p>
+
 迈格云平台使用的所有可视化技术都遵循同一个放射学惯例：
 所有影像的持有权都归病人所有。鉴于在图像来源中，DICOM文件，Analyze文件以及其他格式文件之间的不一致性
 我们强烈推荐您根据自己的操作系统和DICOM文件形式选择合适的转换器：<a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe">Windows操作系统</a> 或 <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg">Mac操作系统</a>。
-
 </p>
 </div>	<!-- put form and picture side by side 
 	http://stackoverflow.com/questions/14148134/how-to-position-three-div-elements-side-by-side-across-a-webpage -->	
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>如果需要全部重新设置，您可以刷新当前界面</p>
+    <p>如要全部重新设置，您可以刷新当前界面</p>
     <table style="width:100%">
     	<tbody><tr>
 			<td width="50%">
@@ -422,14 +418,14 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
                           <option value="Gordon">Computational Anatomy Science Gateway</option>
                     </select>
         <p></p>
-       <p class="subheading">选择成像角度</p>
+       <p class="subheading">Select Slice Type</p>
         <select name="slice_type" id="" slice_type""="" class="form-control span7">
                           <option value="1">Sagittal</option>
                           <option value="0">Axial</option>
                           <option value="2">Sagittal data converted to Axial</option>
                     </select>
         <br>
-        <p class="subheading">选择分割用图谱信息 *</p>
+        <p class="subheading">Select Atlas *</p>
         <select name="atlas_name" id="atlas_name" class="form-control span7"> --&gt;
         <!-- elements without a name in a form will not be in submitted data
         <select id="atlas_name" class="form-control span7"> -->
@@ -444,14 +440,15 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
                           <option value="8">Adult50_90yrs_283Labels_19atlases_M2_V9A</option>
                     </select>
         <br>
-        <p> <span class="subheading">添加您的描述： </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">    <!-- The global progress bar -->
     
-        <p><strong>处理进度</strong></p>
+        <p><strong>Progress</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
 
     <br>
-    <button class="btn" id="pb">提交</button>
+    <!--<button class="btn" id="pb">提交</button>-->
+	<button class="btn" id="pb">提交</button>
     <br>
 	    </td>
 	    <td width="50%">
@@ -468,14 +465,15 @@ http://stackoverflow.com/questions/9281179/how-to-cancel-form-submit-for-btn-pri
 <div>
 <br><br>
 <p>
-* 图谱信息包含“年龄范围”+“图谱中的结构数量”+“图谱数量”+（“融合算法”）+“图谱版本”
+* The atlas name consists of "Age range" + "The number of defined structures" + "The number of atlases" + ("Fusion algorithm") + "Atlas version".
 <br>
-“融合算法”部分暗示着以下的信息：
+For the "Fusion algorithm" section indicates the following:
 <br>
-M1或没有特别说明：使用Tang等人(1)提出的融合算法。
+M1 or not specified: The fusion algorithm follows the method described by Tang et al (1).
+
 <br>
-M2：最终融合步骤由Drs. Hongzhi Wang 和 Paul Yushkevich提供(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>)。
-算法的具体细节可以在(2)中查阅。
+M2: The final atlas-fusion step of this pipeline uses algorithms that was kindly provided by Drs. Hongzhi Wang and Paul Yushkevich 
+(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>). The details of the algorithm can be found in a reference below (2).
 <br>
 <small>(1) Tang, X., K. Oishi, A. V. Faria, A. E. Hillis, M. S. Albert, S. Mori and M. I. Miller (2013). "Bayesian Parameter Estimation and Segmentation in the Multi-Atlas Random Orbit Model." PLOS ONE 8(6): e65591, 3688886
 <br>
@@ -493,7 +491,7 @@ M2：最终融合步骤由Drs. Hongzhi Wang 和 Paul Yushkevich提供(<a target=
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/t1prep#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="1"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

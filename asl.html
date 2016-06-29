@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>迈格云平台 | ASL</title>
+    <title>MriCloud | Brain Mapping</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -58,23 +58,28 @@
  -->   <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
 		        <div class="container">
         <div class="navbar navbar-default">
              <div class="container-fluid"> 
             
-<!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
 			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
 			<!-- HTML::link('home','Home') first argument is path, second argument is the displayed string of the button -->
-            <li class=""><a href="BrainGPSindex">主页</a></li>
+            <li class=""><a href="BrainGPSindex.html">主页</a></li>
 			<li class="dropdown">
  	         <a href="https://braingps.mricloud.org/asl" class="dropdown-toggle" data-toggle="dropdown">手册<b class="caret"></b></a> 
 	        	<ul class="dropdown-menu">
@@ -122,107 +127,104 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		      
+		    		                <li class=""><a href="profile.html">我的个人信息</a></li>		
+									<li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>									
 		      
  <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
               <li class=""><a href="datasources.html">数据来源</a></li>
               <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
 -->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
-        <h3>动脉自螺旋标记（Arterial Spin Labeling） 磁共振影像处理</h3>
+        <h4>Arterial Spin Labeling MRI Processing</h4>
 <form method="POST" action="https://braingps.mricloud.org/asl" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 
     <!-- The fileinput-button span is used to style the file input field as button -->
 	<!-- as the bootstrap changes the classname will change -->	<div>
-	<p>首次使用？请下载 <a href="https://braingps.mricloud.org/docs/Manual_ASL_processing.pdf">手册</a> 。</p>
-	<p><strong>在上传您的ASL数据之前，请使用DICOM转4D解析格式转换器进行图像预处理。  （ <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe"> Windows操作系统 </a> 或 <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg"> Mac操作系统 </a>).</strong>
+	<p>First time user? Please go through the <a href="https://braingps.mricloud.org/docs/Manual_ASL_processing.pdf">manual</a> for ASL processing before you start.</p>
+	<p><strong>Before you upload the ASL data, you need to convert the DICOM files to 4D Analyze format by using our ASL data converter  (for <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe"> Windows </a> or <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg"> MacOS </a>).</strong>
 	</p>
-	<p>
-	<strong>请注意</strong>: 图像数据请转换为4D解析格式(包含头文件.hdr和图像文件.img)以便消除图像中包含的患者个人信息。
+	<p><strong>Warning</strong>: Data needs to be first converted to 4D analyze format (with .hdr/.img file extension). This conversion eliminates personal information from the file to avoid HIPPA issue. Also, this conversion works only for DICOM files directly from scanners.
+    </p><p>All visualization in MriCloud follows the Radiological convention: the left side of image is the right side of the patient. We are aware of the inconsistency in the definitions of image orientations in DICOM, Analyze, and other file types. We guarantee the right-left orientation ONLY when the raw DICOM files from scanners (not from PACS or other data archiving systems) are converted using the converter we provide.
+	
 	</p>
-	<p>如果您有任何使用过程中的问题，可以于Yang Li取得联系：Yang Li (<a href="mailto:yli199@jhmi.edu">yli199@jhmi.edu</a>) or Hanzhang Lu (<a href="mailto:hanzhang.lu@jhu.edu">hanzhang.lu@jhu.edu</a>).	</p>
-    <p>如果需要全部重新设置，您可以刷新当前界面</p>    
+	<p>If you have any questions, please do not hesitate to contact Yang Li (<a href="mailto:yli199@jhmi.edu">yli199@jhmi.edu</a>) or Hanzhang Lu (<a href="mailto:hanzhang.lu@jhu.edu">hanzhang.lu@jhu.edu</a>).	</p>
+    <p>To start over, refresh the page.</p>    
 	</div>	
-	<p><strong>上传ASL扫描仪输出的图像文件(.img)和头文件(.hdr)</strong></p>
+	<p><strong>Upload the .img and .hdr files from ASL scan</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>图像文件(.img)</span>
+        <span>img</span>
         <input type="file" name="asl_img">
     </span>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>头文件(.hdr)</span>
+        <span>hdr</span>
         <input type="file" name="asl_hdr">
     </span>
     <br>
-    <p><strong id="asl_tip_container_0">上传M0扫描的图像文件(.img)和头文件(.hdr)-选填 <font color="red">*</font><a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_0_text"><i class="icon-info-sign" id="asl_tip_sign_0" data-hasqtip="0"></i></a></strong></p>
+    <p><strong id="asl_tip_container_0">Upload the .img and .hdr files from M0 scan (optional) <font color="red">*</font><a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_0_text"><i class="icon-info-sign" id="asl_tip_sign_0" data-hasqtip="0"></i></a></strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>图像文件(.img)</span>
+        <span>img</span>
         <input id="m0_img" type="file" name="m0_img">
     </span>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>头文件(.hdr)</span>
+        <span>hdr</span>
         <input id="m0_hdr" type="file" name="m0_hdr">
     </span>
     <br>
-    <p><strong id="asl_tip_container_1">上传T1多图谱分割的压缩文件(.zip)-选填 <a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_1_text"><i class="icon-info-sign" id="asl_tip_sign_1" data-hasqtip="1"></i></a></strong></p>
+    <p><strong id="asl_tip_container_1">Upload the zip file from T1-MultiAtlas analysis (optional) <a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_1_text"><i class="icon-info-sign" id="asl_tip_sign_1" data-hasqtip="1"></i></a></strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>压缩包(.zip)</span>
+        <span>zip</span>
         <input type="file" name="t1_zip">
     </span>
     <br>
-    <p><strong id="asl_tip_container_4">上传包含参数的(.json)文件-选填<a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_4_text"><i class="icon-info-sign" id="asl_tip_sign_4" data-hasqtip="2"></i></a></strong></p>
+    <p><strong id="asl_tip_container_4">Upload the .json file that contains parameters (optional) <a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_4_text"><i class="icon-info-sign" id="asl_tip_sign_4" data-hasqtip="2"></i></a></strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>参数文件(.json)</span>
+        <span>json</span>
         <input id="json_file" type="file" name="json_file">
     </span>
     <br>
-    <p><strong>文件选择</strong></p>
+    <p><strong>Files selected</strong></p>
     <div id="files" class="files"></div>
     
     <div id="manual_inputs">
     <br>
     
-    	<p class="subheading">标记规则：</p>   
+    	<p class="subheading">Labeling scheme:</p>   
         <select name="lablschm" class="form-control span5">	
               <option value="pCASL">pCASL</option>
               <option value="PASL">PASL</option>
               <option value="UCLA_Siemens_pCASL">UCLA Siemens pCASL</option>
         </select>
-    <p class="subheading">控制/标记顺序：</p>   
+    <p class="subheading">Control/label order:</p>   
         <select name="order" id="order" class="form-control span5">	
-              <option value="Control first">控制优先</option>
-              <option value="Label first">标记优先</option>
+              <option value="Control first">Control First</option>
+              <option value="Label first">Label First</option>
         </select>
-    	<p class="subheading">成像规则：</p>   
+    	<p class="subheading">Acquisition scheme:</p>   
         <select name="acqdim" id="acqdim" class="form-control">	
               <option value="2D">2D</option>
               <option value="3D">3D</option>
         </select>
         
-    	<p class="subheading">成像时间参数：</p>
+    	<p class="subheading">Acquisition timing parameters:</p>
         <div id="pCASL_options">
-	    	<div>标记持续时间(ms)</div>
+	    	<div>Labeling duration (ms)</div>
 			<input type="number" name="labldur" value="1800" class="form-control span3">
-	    	<div>标记后延迟(ms)</div>
+	    	<div>Post labeling delay (ms)</div>
 	    	<input type="number" name="PLD" value="1800" class="form-control span3">
     	</div>
         <div id="PASL_options" style="display: none;">
@@ -232,10 +234,10 @@
 	    	<input type="number" name="TI" value="1800" class="form-control span3">
     	</div>
     	<div id="2D_acq_duration_input">
-		<div id="asl_tip_container_2">层间成像延迟(ms)<a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_2_text"><i class="icon-info-sign" id="asl_tip_sign_2" data-hasqtip="3"></i></a></div>
+		<div id="asl_tip_container_2">Slice acquisition duration (ms)<a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_2_text"><i class="icon-info-sign" id="asl_tip_sign_2" data-hasqtip="3"></i></a></div>
 		<input type="number" name="w" value="35" class="form-control span3">
     	</div>
-    	<p class="subheading" id="asl_tip_container_3">是否需要背景抑制？ <a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_3_text"><i class="icon-info-sign" id="asl_tip_sign_3" data-hasqtip="4"></i></a></p>   
+    	<p class="subheading" id="asl_tip_container_3">Background supression? <a style="display: inline" href="https://braingps.mricloud.org/asl#asl_tip_3_text"><i class="icon-info-sign" id="asl_tip_sign_3" data-hasqtip="4"></i></a></p>   
         <select name="bgsup" id="bgsup" class="form-control">	
               <option value="0">No</option>
               <option value="1">Yes</option>
@@ -264,7 +266,7 @@
 			</div>
 		</div>
 		
-		<p class="subheading">M0 获取/估计参数：</p>
+		<p class="subheading">M0 acquisition/estimation parameters:</p>
 		<div id="tr_m0_control" style="display: none;">
 			<div>TR of M0 scan (ms)</div>
 			<input type="number" id="TR_M0" name="M0_TR" value="8000" class="form-control span3">
@@ -284,14 +286,14 @@
 		<input type="number" name="alpha_labl" value="0.85" class="form-control span3">
         <p></p>
         </div>
-        <p> <span class="subheading">添加您的描述： </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">                
     <!-- The global progress bar -->
         <p></p>
-        <p><strong>处理进度</strong></p>
+        <p><strong>Progress</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
         <br>    
-    <button class="btn" id="pb">提交</button>
+    <button class="btn" id="pb">Submit</button>
     <br>
 
 
@@ -521,7 +523,7 @@ You may input the scanning parameters in the following boxes, or upload the para
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/asl#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="5"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

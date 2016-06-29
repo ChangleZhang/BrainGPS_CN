@@ -1,0 +1,941 @@
+/********首页图片切换样式
+ * *作者：lxyyxl2425
+ * *********/
+
+.sticked {
+	background-color: rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 1px 0px 0px rgba(52, 65, 73, 0.1);
+	box-shadow: 0px 1px 0px 0px rgba(52, 65, 73, 0.1);
+}
+
+@media screen and (max-width:480px) {
+	.sliders {
+		max-height: 761px;
+		max-width: 1600px;
+	}
+	.sliders img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.slider-wrap {
+		height: auto;
+		max-width: 100%;
+		min-width: 100%;		
+	}
+	.slider {
+		display: block;
+		position: absolute;
+		max-height: 100%;
+		max-width: 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		border: 1px solid #008200;
+	}
+	.button-wrapper {
+		/*width: 1242px;*/
+		position: absolute;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		z-index: 1;
+	}
+	.button-group {
+		margin: 480px auto 0;
+	}
+	.button-group a {
+		display: inline-block;
+		font-size: 24px;
+		height: 50px;
+		margin-right: 2px;
+		text-align: center;
+		width: 139px;
+	}
+	.button-group a:focus {
+		outline: 0
+	}
+	/*白色边框按钮*/
+	.button-group .btn-whiteborder {
+		border: #e2e6e7 2px solid;
+		width: 155px;
+		padding: 12px 0px;
+	}
+	/*蓝背景色按钮*/
+	.button-group .btn-mzblue {
+		background-color: #00a7eb;
+		border: #00a7eb 2px solid;
+		width: 180px;
+		padding: 12px 0px;
+	}
+	.button-group .btn-elianblue_1 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #65b2fb 2px solid;
+		background-color: #65b2fb;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_2 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #65b2fb 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_3 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #148ea3 2px solid;
+		background-color: #148ea3;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_4 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #148ea3 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-eliangreen_1 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #00ab1b 2px solid;
+		background-color: #00ab1b;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-eliangreen_2 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #00ab1b 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_1:hover {
+		background-color: #4CA6FA;
+		border: #4CA6FA 2px solid;
+	}
+	.button-group .btn-elianblue_2:hover {
+		background-color: #1A8DF9;
+		border: #1A8DF9 2px solid;
+	}
+	.button-group .btn-eliangreen_1:hover {
+		background-color: #009416;
+		border: #009416 2px solid;
+	}
+	.button-group .btn-eliangreen_2:hover {
+		background-color: #00C71E;
+		border: #00C71E 2px solid;
+	}
+	.button-group .btn-mzblack {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #72787E 2px solid;
+		background-color: #72787E;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-mznobg {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #72787E 2px solid;
+		background: none;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	a.btn-mzblack:hover {
+		background-color: #323236;
+		border: #323236 2px solid;
+	}
+	a.btn-mznobg:hover {
+		background-color: #323236;
+		border: #323236 2px solid;
+	}
+	/*白背景色按钮*/
+	.button-group .btn-mzwhite {
+		background-color: #FFF;
+		color: #00a7eb;
+		border: #FFF 2px solid;
+		width: 155px;
+		padding: 12px 0px;
+	}
+	.button-group a:focus {
+		outline: 0;
+	}
+	.mx4-banner .button-group {
+		width: 380px;
+		margin-top: 450px;
+		padding-left: 690px;
+	}
+	.mx4pro-banner .button-group {
+		margin-top: 450px;
+		padding-left: 690px;
+	}
+	.noblue-banner .button-group {
+		width: 380px;
+		margin: 0 0;
+		padding: 362px 0px 0px 700px;
+	}
+	.noblue-banner .button-group a {
+		float: left;
+		width: 156px;
+		margin-right: 20px;
+		padding: 12px 0px;
+		text-align: center;
+		border: 2px solid #FFF;
+		border-radius: 6px;
+		background: none;
+	}
+	.noblue-banner .button-group .btn-yuding {
+		background-color: #FFF;
+		color: #00b9f2;
+		border-radius: 6px;
+	}
+	.note-banner .button-group {
+		width: 310px;
+		margin: 0 0;
+		padding: 449px 0 0 0;
+	}
+	.note-banner .button-group a {
+		float: left;
+		width: 128px;
+		margin-right: 20px;
+		padding: 12px 0px;
+		text-align: center;
+		border: 2px solid #FFF;
+		border-radius: 6px;
+		background: none;
+	}
+	.note-banner .button-group .btn-yuding {
+		background-color: #FFF;
+		color: #00b9f2;
+		border-radius: 6px;
+	}
+	.connected-banner .button-group {
+		width: 390px;
+		margin: 0px 0px;
+		padding: 540px 0 0 364px;
+	}
+	.connected-banner .button-group a {
+		float: left;
+		width: 174px;
+		height: 52px;
+		line-height: 52px;
+		text-align: center;
+		border: 2px solid #000;
+		border-radius: 30px;
+		color: #000;
+	}
+	.connected-banner .button-transparent a {
+		border: none;
+		width: 75px;
+		height: 100px;
+		margin-right: 44px;
+	}
+	.appdown20e-banner .button-group {
+		width: 164px;
+		margin: 0 auto;
+		left: -40px;
+		padding: 500px 0 0 0;
+	}
+	.appdown20e-banner .button-group a {
+		display: block;
+		width: 120px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		font-size: 18px;
+		color: #333;
+		background-color: #FFF;
+		text-shadow: 0 0 2px #999;
+		border: #333 1px solid;
+		border-radius: 40px;
+	}
+	.slider-wrap .button-group a.btn-last {
+		margin-right: 0px;
+	}
+	/*logo*/
+	.elian-header-link,
+	.elian-header a,
+	.elian-header-log {
+		/*color: white;*/
+		color: #333;
+	}
+	.elian-header-logo-img {
+		width: 51px;
+		height: 51px;
+		display: block;
+		background-image: url(../img/logo1.png);
+		background-image: -webkit-image-set(url(../img/logo_s.png) 1x, url(../img/logo_s.png) 2x);
+	}
+	.bullet {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+	}
+	.bullet li {
+		float: left;
+		margin: 0 12px;
+		width: 14px;
+		height: 14px;
+		background-image: url(../img/icon-circle.png);
+		background-image: -webkit-image-set(url(../img/icon-circle.png) 1x, url(../img/icon-circle.png) 2x);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.bullet li.icon-circle {
+		width: 10px;
+	}
+	.theme-white .icon-circle-thin {
+		background-position: 0 center;
+	}
+	.theme-white .icon-circle {
+		background-position: -14px center;
+	}
+	.theme-gray .icon-circle-thin {
+		background-position: -24px center;
+	}
+	.theme-gray .icon-circle {
+		background-position: -38px center;
+	}
+	/**图片轮播按钮**/
+	.slider-1 .button-group .btn_loca {
+		margin: 459px 0px 0 45px;
+	}
+	.slider-2 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-3 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-4 .button-group .btn_loca {
+		margin-top: 447px;
+	}
+	.slider-5 .button-group .btn_loca {
+		margin: 456px 0 0 150px;
+	}
+	.about-rgoup{
+		margin:25% 0 0 31%;		
+	}
+	.about-rgoup h2{
+		font-family: "微软雅黑";
+		font-size: 32px;
+		font-weight: 100;
+	}
+	.about-rgoup h3{
+		font-family: "微软雅黑";
+		font-size: 22px;
+		line-height: 1.5;
+	}
+	.myCarousel {
+		text-align: center;
+		color: #FFFFFF;
+		margin: 1% 0 0 1%;
+	}
+	.myCarousel p {
+		font-family: "微软雅黑";
+		line-height: 2;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width:489px) and (max-width:767px) {
+	.sliders {
+		max-height: 761px;
+		max-width: 1600px;
+		width: 100%;
+	}
+	.sliders img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.slider {
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.slider img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.silder-wrap {
+		height: auto;
+		max-width: 100%;
+		min-width: 100%;
+	}
+	.button-wrapper {
+		/*width: 1242px;*/
+		position: absolute;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		z-index: 1;
+	}
+	/*logo*/
+	.elian-header-link,
+	.elian-header a,
+	.elian-header-log {
+		/*color: white;*/
+		color: #333;
+	}
+	.elian-header-logo-img {
+		width: 51px;
+		height: 51px;
+		display: block;
+		padding: 8px;
+		background-image: url(../img/logo_s.png);
+		background-image: -webkit-image-set(url(../img/logo_s.png) 1x, url(../img/logo_s.png) 2x);
+	}
+	.bullet {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+	}
+	.bullet li {
+		float: left;
+		margin: 0 12px;
+		width: 14px;
+		height: 14px;
+		background-image: url(../img/icon-circle.png);
+		background-image: -webkit-image-set(url(../img/icon-circle.png) 1x, url(../img/icon-circle.png) 2x);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.bullet li.icon-circle {
+		width: 10px;
+	}
+	.icon-circle-thin {
+		background-position: 0 center;
+	}
+	.icon-circle {
+		background-position: -14px center;
+	}
+	.icon-circle-thin {
+		background-position: -24px center;
+	}
+	.icon-circle {
+		background-position: -38px center;
+	}
+	/**图片轮播按钮**/
+	.slider-1 .button-group .btn_loca {
+		margin: 459px 0px 0 45px;
+	}
+	.slider-2 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-3 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-4 .button-group .btn_loca {
+		margin-top: 447px;
+	}
+	.slider-5 .button-group .btn_loca {
+		margin: 456px 0 0 150px;
+	}
+	.about-rgoup h2{
+		font-family: "微软雅黑";
+		font-size: 32px;
+		font-weight: 100;
+	}
+	.about-rgoup{
+		margin: 18% 0 0 0;
+	}
+	.about-rgoup h3{
+		font-size: 16px;
+		font-family: "微软雅黑";
+		line-height: 1.5;
+	}
+	.myCarousel {
+		text-align: center;
+		color: #FFFFFF;
+		margin: 1% 0 0 1%;
+	}
+	.myCarousel p {
+		font-family: "微软雅黑";
+		line-height: 2;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+	.sliders {
+		max-height: 761px;
+		max-width: 1600px;
+		width: 100%;
+	}
+	.sliders img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.slider {
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.slider img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+	.silder-wrap {
+		height: auto;
+		max-width: 100%;
+		min-width: 100%;
+	}
+	.button-wrapper {
+		/*width: 1242px;*/
+		position: absolute;
+		max-width: 100%;
+		max-height: 100%;
+		margin: 0 auto;
+		z-index: 1;
+	}
+	/*logo*/
+	.elian-header-link,
+	.elian-header a,
+	.elian-header-log {
+		/*color: white;*/
+		color: #333;
+	}
+	.elian-header-logo-img {
+		width: 51px;
+		height: 51px;
+		display: block;
+		padding: 8px;
+		background-image: url(../img/logo_s.png);
+		/*background-image: -webkit-image-set(url(../img/logo_s.png) 1x, url(../img/logo_s.png) 2x);*/
+	}
+	.bullet {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+	}
+	.bullet li {
+		float: left;
+		margin: 0 12px;
+		width: 14px;
+		height: 14px;
+		background-image: url(../img/icon-circle.png);
+		background-image: -webkit-image-set(url(../img/icon-circle.png) 1x, url(../img/icon-circle.png) 2x);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.bullet li.icon-circle {
+		width: 10px;
+	}
+	.icon-circle-thin {
+		background-position: 0 center;
+	}
+	.icon-circle {
+		background-position: -14px center;
+	}
+	.icon-circle-thin {
+		background-position: -24px center;
+	}
+	.icon-circle {
+		background-position: -38px center;
+	}
+	/**图片轮播按钮**/
+	.slider-1 .button-group .btn_loca {
+		margin: 459px 0px 0 45px;
+	}
+	.slider-2 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-3 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-4 .button-group .btn_loca {
+		margin-top: 447px;
+	}
+	.slider-5 .button-group .btn_loca {
+		margin: 456px 0 0 150px;
+	}
+	.about-rgoup{
+		margin:18% 7% 0 7%;		
+	}
+	.about-rgoup h2{
+		font-family: "微软雅黑";
+		font-size: 32px;
+		font-weight: 100;
+	}
+	.about-rgoup h3{
+		font-family: "微软雅黑";
+		font-size: 22px;
+		line-height: 1.5;
+	}
+	.myCarousel {
+		text-align: center;
+		color: #FFFFFF;
+		margin: 6% 8% 0 8%;
+	}
+	.myCarousel p {
+		font-family: "微软雅黑";
+		line-height: 2;
+		font-size: 16px;
+	}
+}
+
+@media (min-width:992px) {
+	.sliders {
+		height: 761px;
+		width: 100%;
+	}
+	.sliders img {
+		text-align: center;
+		max-height: 100%;
+		max-width: 100%;
+	}
+	.slider-wrap {
+		height: auto;
+		max-width: 100%;
+		min-width: 100%;
+		padding-bottom: 100px;
+	}
+	.slider {
+		display: none;
+		position: absolute;
+		width: 100%;
+		height: 761px;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.button-wrapper {
+		position: absolute;
+		width: 1242px;
+		margin: 0 auto;
+		z-index: 1;
+	}
+	.button-group {
+		margin: 480px auto 0;
+	}
+	.button-group a {
+		display: inline-block;
+		font-size: 24px;
+		height: 50px;
+		margin-right: 2px;
+		text-align: center;
+		width: 139px;
+	}
+	.button-group a:focus {
+		outline: 0
+	}
+	/*白色边框按钮*/
+	.button-group .btn-whiteborder {
+		border: #e2e6e7 2px solid;
+		width: 155px;
+		padding: 12px 0px;
+	}
+	/*蓝背景色按钮*/
+	.button-group .btn-mzblue {
+		background-color: #00a7eb;
+		border: #00a7eb 2px solid;
+		width: 180px;
+		padding: 12px 0px;
+	}
+	.button-group .btn-elianblue_1 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #65b2fb 2px solid;
+		background-color: #65b2fb;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_2 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #65b2fb 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_3 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #148ea3 2px solid;
+		background-color: #148ea3;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_4 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #148ea3 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-eliangreen_1 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #00ab1b 2px solid;
+		background-color: #00ab1b;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-eliangreen_2 {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #00ab1b 2px solid;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-elianblue_1:hover {
+		background-color: #4CA6FA;
+		border: #4CA6FA 2px solid;
+	}
+	.button-group .btn-elianblue_2:hover {
+		background-color: #1A8DF9;
+		border: #1A8DF9 2px solid;
+	}
+	.button-group .btn-eliangreen_1:hover {
+		background-color: #009416;
+		border: #009416 2px solid;
+	}
+	.button-group .btn-eliangreen_2:hover {
+		background-color: #00C71E;
+		border: #00C71E 2px solid;
+	}
+	.button-group .btn-mzblack {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #72787E 2px solid;
+		background-color: #72787E;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	.button-group .btn-mznobg {
+		color: #FFFFFF;
+		width: 190px;
+		height: 65px;
+		border: #72787E 2px solid;
+		background: none;
+		font-size: 20px;
+		font-family: 微软雅黑;
+		line-height: 65px;
+	}
+	a.btn-mzblack:hover {
+		background-color: #323236;
+		border: #323236 2px solid;
+	}
+	a.btn-mznobg:hover {
+		background-color: #323236;
+		border: #323236 2px solid;
+	}
+	/*白背景色按钮*/
+	.button-group .btn-mzwhite {
+		background-color: #FFF;
+		color: #00a7eb;
+		border: #FFF 2px solid;
+		width: 155px;
+		padding: 12px 0px;
+	}
+	.button-group a:focus {
+		outline: 0;
+	}
+	.mx4-banner .button-group {
+		width: 380px;
+		margin-top: 450px;
+		padding-left: 690px;
+	}
+	.mx4pro-banner .button-group {
+		margin-top: 450px;
+		padding-left: 690px;
+	}
+	.noblue-banner .button-group {
+		width: 380px;
+		margin: 0 0;
+		padding: 362px 0px 0px 700px;
+	}
+	.noblue-banner .button-group a {
+		float: left;
+		width: 156px;
+		margin-right: 20px;
+		padding: 12px 0px;
+		text-align: center;
+		border: 2px solid #FFF;
+		border-radius: 6px;
+		background: none;
+	}
+	.noblue-banner .button-group .btn-yuding {
+		background-color: #FFF;
+		color: #00b9f2;
+		border-radius: 6px;
+	}
+	.note-banner .button-group {
+		width: 310px;
+		margin: 0 0;
+		padding: 449px 0 0 0;
+	}
+	.note-banner .button-group a {
+		float: left;
+		width: 128px;
+		margin-right: 20px;
+		padding: 12px 0px;
+		text-align: center;
+		border: 2px solid #FFF;
+		border-radius: 6px;
+		background: none;
+	}
+	.note-banner .button-group .btn-yuding {
+		background-color: #FFF;
+		color: #00b9f2;
+		border-radius: 6px;
+	}
+	.connected-banner .button-group {
+		width: 390px;
+		margin: 0px 0px;
+		padding: 540px 0 0 364px;
+	}
+	.connected-banner .button-group a {
+		float: left;
+		width: 174px;
+		height: 52px;
+		line-height: 52px;
+		text-align: center;
+		border: 2px solid #000;
+		border-radius: 30px;
+		color: #000;
+	}
+	.connected-banner .button-transparent a {
+		border: none;
+		width: 75px;
+		height: 100px;
+		margin-right: 44px;
+	}
+	.appdown20e-banner .button-group {
+		width: 164px;
+		margin: 0 auto;
+		left: -40px;
+		padding: 500px 0 0 0;
+	}
+	.appdown20e-banner .button-group a {
+		display: block;
+		width: 120px;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		font-size: 18px;
+		color: #333;
+		background-color: #FFF;
+		text-shadow: 0 0 2px #999;
+		border: #333 1px solid;
+		border-radius: 40px;
+	}
+	.slider-wrap .button-group a.btn-last {
+		margin-right: 0px;
+	}
+	/*logo*/
+	.elian-header-link,
+	.elian-header a,
+	.elian-header-log {
+		/*color: white;*/
+		color: #333;
+	}
+	.elian-header-logo-img {
+		width: 102px;
+		height: 50px;
+		display: block;
+		background-image: url(../img/logo1.png);
+		background-image: -webkit-image-set(url(../img/logo1.png) 1x, url(../img/logo@2x.png) 2x);
+	}
+	.bullet {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+	}
+	.bullet li {
+		float: left;
+		margin: 0 12px;
+		width: 14px;
+		height: 14px;
+		background-image: url(../img/icon-circle.png);
+		background-image: -webkit-image-set(url(../img/icon-circle.png) 1x, url(../img/icon-circle.png) 2x);
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.bullet li.icon-circle {
+		width: 10px;
+	}
+	.theme-white .icon-circle-thin {
+		background-position: 0 center;
+	}
+	.theme-white .icon-circle {
+		background-position: -14px center;
+	}
+	.theme-gray .icon-circle-thin {
+		background-position: -24px center;
+	}
+	.theme-gray .icon-circle {
+		background-position: -38px center;
+	}
+	/**图片轮播按钮**/
+	.slider-1 .button-group .btn_loca {
+		margin: 459px 0px 0 45px;
+	}
+	.slider-2 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-3 .button-group .btn_loca {
+		margin: 471px 80px 0 0px;
+	}
+	.slider-4 .button-group .btn_loca {
+		margin-top: 447px;
+	}
+	.slider-5 .button-group .btn_loca {
+		margin: 456px 0 0 150px;
+	}
+	nav.toggle .elian-header-logo-img {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-image: url("../img/404.png");
+	}
+	.about-rgoup{
+		margin:21% 0% 0 27%;		
+	}
+	.about-rgoup h2{
+		font-family: "微软雅黑";
+		font-size: 32px;
+		font-weight: 100;
+	}
+	.about-rgoup h3{
+		font-family: "微软雅黑";
+		font-size: 22px;
+		line-height: 2;
+	}
+	.myCarousel {
+		text-align: center;
+		color: #FFFFFF;
+		margin: 10% 0% 0 21%;
+	}
+	.myCarousel p {
+		font-family: "微软雅黑";
+		line-height: 2;
+		font-size: 18px;
+	}	
+}

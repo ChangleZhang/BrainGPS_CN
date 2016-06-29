@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>迈格云平台 | 我的工作状态</title>
+    <title>MriCloud | Brain Mapping</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -58,6 +58,15 @@
  -->   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
 		        <div class="container">
@@ -65,15 +74,13 @@
              <div class="container-fluid"> 
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+         
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
 			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
 			<!-- HTML::link('home','Home') first argument is path, second argument is the displayed string of the button -->
-            <li class=""><a href="BrainGPSindex">主页</a></li>
+            <li class=""><a href="BrainGPSindex.html">主页</a></li>
 			<li class="dropdown">
  	         <a href="https://braingps.mricloud.org/myjobstatus" class="dropdown-toggle" data-toggle="dropdown">手册<b class="caret"></b></a> 
 	        	<ul class="dropdown-menu">
@@ -121,35 +128,67 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class="active"><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		     
+		    		                <li class=""><a href="profile.html">我的个人信息</a></li>		
+ <li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>									
 		      
  <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
               <li class=""><a href="datasources.html">数据来源</a></li>
               <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
 -->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+         
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
-<h4 class="subheading">工作状态</h4>
-	<div> <p><strong>请注意</strong>：因为存储空间限制，您的处理结果将会在任务提交后的60天删除，请及时下载您的处理结果。
-</p></div>	<div> <p>每个用户每个月有50个处理限额。</p> </div>	
+<h4 class="subheading">Job Status</h4>
+	<div> <p><strong>Warning</strong>: Due to limited storage space, all jobs and their results will 
+be deleted from our server after 60 days from submission date, please download results in time.
+</p></div>	<div> <p>Warning: Every user has a monthly quota of 50 job submissions.</p> </div>	
 <br>
-<h4 class="subheading">您当前的工作表 <span class="badge badge-success">0</span> </h4>
+<h4 class="subheading">List of your jobs <span class="badge badge-success">0</span> </h4>
 
-    目前尚未提交任何作业。
+        <table class="table table-striped table-hover table-condensed">
+        <thead>
+            <tr>
+				<th>ID</th>
+				<!-- <th>md5sum (if any)</th> -->
+				<th>Submission Date</th>
+				<th>Job Type</th>
+				<th>Description</th>
+				
+				<th>Status</th>
+				<th>Action</th>
+				<th>Delete</th>
+				</tr>
+        </thead>
+
+        <tbody>
+<!-- multiple actions -->
+                            <tr>
+					<td>1</td>
+			<!-- 		<td>16b5f70f73f33c265abed875869d441b</td>	 -->									
+            		<td>2016-06-29 15:41:14 UTC</td>
+					<td>T1PreProcessing</td>
+					<td>axial</td>					
+					<td>finished</td>
+					<td>
+																								<a href="./files/AD1_seg.rar" class="btn btn-primary">下载结果</a>																																																			<a href="./files/General_Segement_Report_Output.pdf" class="btn btn-primary">下载报告</a>																							<!-- http://laravel.com/docs/html#opening-a-form -->
+					<td>
+											<form method="POST" action="https://braingps.mricloud.org/deletejob%3Fjobid=2069" accept-charset="UTF-8" class="form-horizontal"><input name="_method" type="hidden" value="DELETE"><input name="_token" type="hidden" value="2p1lKzkxtMiA7KXTcsMjXSs6Den1381RMi0L93mN">							<button type="submit" class="btn btn-danger" id="delete_2069">Delete</button>
+						</form>										</td>
+				</tr>
+ 
+                
+            
+        </tbody>
+    </table>
+
 
         
     </div>
@@ -160,7 +199,7 @@
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/myjobstatus#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

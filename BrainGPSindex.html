@@ -72,17 +72,31 @@
 .en-markup-crop-options div div:first-of-type {
     margin-left: 0px !important;
 }
-</style></head>
+</style>
+
+
+
+        <link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+
+ <script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+   
+
+
+
+
+</head>
   <body>
 		        <div class="container">
         <div class="navbar navbar-default">
              <div class="container-fluid"> 
             
-<!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
-<!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
 			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
@@ -112,7 +126,7 @@
 		        
 <!--              <li class=""><a href="I:\Mricloud_CN\MriCloud _ Brain Mapping.html">T1-Brain/Skull/CSF/Ventricle</a></li> -->
 
-	              <li class=""><a href="tutorial.html">T1-多图谱分割</a></li>
+	              <li class=""><a href="t1prep.html">T1-多图谱分割</a></li>
 <!--              <li class=""><a href="https://braingps.mricloud.org/t1seg">T1-250</a></li> -->
 		    	  <li class=""><a href="t1batch.html">T1-多图谱分割 批处理</a></li>
 
@@ -125,7 +139,8 @@
 		      	      <li class=""><a href="dtimultiatlasseg.html">DTI 多图谱分割</a></li>
 		      	      </ul>
       	      </li>
-	      	  <li class=""><a href="fmri.html">fMRI</a></li> 	              
+	      	  <li class=""><a href="fmri.html">fMRI</a></li> 
+			 <!--  <button type="button" class="btn btn-warning">（警告）Warning</button> -->	
 	      	  <li class=""><a href="asl.html">ASL</a></li> 	              
       	      		          	       	              
       	      <li class="dropdown">
@@ -139,26 +154,15 @@
 		      </li>
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
-	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-			  <li class=""><a href="profile.html">我的个人信息</a></li>					          
-		      
- <!--              <li class="active"><a I:\Mricloud_CN\MriCloud   Brain Mapping.htm</a></li>
-              <li class=""><a href="I:\Mricloud_CN\MriCloud _ Brain Mapping8.html">Data Sources</a></li>
-              <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
--->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	               
+			  <li class=""><a href="profile.html">我的个人信息</a></li>
+			  <li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>			  		                               
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
@@ -199,7 +203,7 @@ f: Li, Y., Shea, S.M., Lorenz, C.H., Jiang, H, Chou, M-C, Mori, S. "Image Corrup
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="I:\Mricloud_CN\MriCloud _ Brain Mapping.html#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

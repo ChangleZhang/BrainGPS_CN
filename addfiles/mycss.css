@@ -1,0 +1,75 @@
+/*lufb start*/
+.active1{
+	background-color: #EFF5FB!important;
+}
+.color{
+	color:#000;
+}
+
+.bgcn{
+	background-color: #FFFFFF;
+}
+
+/*lufb end */
+.color-wirte{
+	color: #fffff;
+}
+.font-yh{
+	font-family: "微软雅黑";
+}
+.float_left{
+	float: let;
+}
+.float_right{
+	float: right;
+}
+.pd25{
+	padding: 25%;
+}
+
+.pdt2{
+	padding-top: 2%;
+}
+.pdt5{
+	padding-top: 5%;
+}
+.pdt10{
+	padding-top: 10%;
+}
+.pdl10{
+	padding-left: 10%;
+}
+.pdr5{
+	padding-right: 5%;
+}
+.pdr10{
+	padding-right: 10%;
+}
+.pdr15{
+	padding-right: 15%;
+}
+
+.mrgl2{
+	margin-left: 2%;	
+}
+.mrgl5{
+	margin-left: 5%;	
+}
+.mrgl10{
+	margin-left: 10%;
+}
+.mrgl15{
+	margin-left: 15%;
+}
+.mrgl20{
+	margin-left: 20%;
+}
+.mrgr5{
+	margin-right: 5%;
+}
+.mrgr10{
+	margin-right: 10;
+}
+.mrgr15{
+	margin-right: 15;
+}

@@ -58,17 +58,22 @@
  -->   <link rel="stylesheet" href="css/jquery.fileupload-ui.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
   </head>
   <body>
 		        <div class="container">
         <div class="navbar navbar-default">
              <div class="container-fluid"> 
             
-<!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+ 
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
@@ -122,29 +127,24 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		      <li class=""><a href="profile.html">我的个人信息</a></li>
+		    		                <li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>					          
 		      
  <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
               <li class=""><a href="datasources.html">数据来源</a></li>
               <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
 -->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+         
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
-<h3>T1多图谱分割批处理</h3>		
+<h4>T1 MultiAtlas Segmentation</h4>		
 	<a style="display: inline" href="https://braingps.mricloud.org/t1batch#footnote"><i class="icon-info-sign" id="foottip" data-hasqtip="0"></i></a>
 		<div id="footnote" style="display:none">
 		<h4>T1 MultiAtlas Segmentation</h4>
@@ -257,7 +257,8 @@
     });   
 </script><form method="POST" action="https://braingps.mricloud.org/t1batch" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 	<!-- as the bootstrap changes the classname will change -->
-	<div> <p><strong>请注意</strong>: 因为存储空间限制，您的处理结果将会在任务提交后的60天删除，请及时下载您的处理结果。
+	<div> <p><strong>Warning</strong>: Due to limited storage space, all jobs and their results will 
+be deleted from our server after 60 days from submission date, please download results in time.
 </p></div>	<!--	<div>
 	If your images are in DICOM format, please first convert them to Analyze format.
 	Click <a href="tools/Dcm2Analyze.exe" >here</a> to download a conversion tool for Windows OS						
@@ -265,47 +266,56 @@
 	--> 		
 <div><p>
 
-迈格云平台使用的所有可视化技术都遵循同一个放射学惯例：
-所有影像的持有权都归病人所有。鉴于在图像来源中，DICOM文件，Analyze文件以及其他格式文件之间的不一致性
-我们强烈推荐您根据自己的操作系统和DICOM文件形式选择合适的转换器：<a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe">Windows操作系统</a> 或 <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg">Mac操作系统</a>。
-</p>
+Warning: All visualization in MriCloud follows the Radiology convention: 
+the image left is the patient right. We are aware of inconsistency in the definitions of 
+image orientations in DICOM, Analyze, and other file types. We guarantee the right-left 
+orientation ONLY WHEN the raw DICOM files FROM scanners (not from PACS and other data 
+archiving systems) are converted to the Analyze format using the programs we offer. 
+According to your operating systems and DICOM formats, 
+download the program for <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.exe">WindowsOS</a> or <a href="https://braingps.mricloud.org/tools/Dcm2Analyze_v3.dmg">MacOS</a>. 
+
+If the data are exported from other software or the images are touched by external software 
+during the preparation, the users have the responsibility to identify the right-left orientation, 
+regardless of our labeling. This can be done by inspecting the images in our output files and 
+compare them with another visualization program you trust, preferably the scanner vendors’ console or 
+workstations.</p>
 </div>	<!-- put form and picture side by side 
 	http://stackoverflow.com/questions/14148134/how-to-position-three-div-elements-side-by-side-across-a-webpage -->	
 	
 		<!-- 
 	     The fileinput-button span is used to style the file input field as button -->
-	    <p>如果需要全部重新设置，您可以刷新当前界面</p>
+	    <p>To start over, refresh the page</p>
 	<table style="width:100%">
 		<tbody><tr>
 			<td width="50%">	
-	    <p><strong>将您所有的头文件(.hdr)和图像文件(.img)放到同一个zip压缩包中并上传</strong></p>
+	    <p><strong>Put your .hdr and .img files in one zip file and upload</strong></p>
 	    <!-- only one button element in a form, it's for submission!!!! you can make other elements looks like button
 	    	using class='btn' in bootstrap, but the element type button is for submission only!!!!!
 	    -->
 	    <!-- file type for fileupload -->
 	    <span class="btn btn-success fileinput-button">
 	        <i class="icon-plus icon-white"></i>
-	        <span>压缩包(.zip)</span>
+	        <span>.zip</span>
 	        <input type="file" name="zip">
 	    </span>
 	    <br>
-	    <p><strong>文件选择</strong></p>
+	    <p><strong>Files selected</strong></p>
 	    <div id="files" class="files"></div>
 	    <br>    
 		<br>
-	       <p class="subheading">选择处理服务器</p>
+	       <p class="subheading">Select processing server</p>
 	        <select name="processing_serverid" id="processing_serverid" class="form-control span5">
 	            	              <option value="Gordon">Computational Anatomy Science Gateway</option>
 	            	        </select>
 	        <p></p>
-	       <p class="subheading">选择成像角度</p>
+	       <p class="subheading">Select Slice Type</p>
 	        <select name="slice_type" id="" slice_type""="" class="form-control span7">
 	            	              <option value="1">Sagittal</option>
 	            	              <option value="0">Axial</option>
 	            	              <option value="2">Sagittal data converted to Axial</option>
 	            	        </select>
 	        <br>
-	        <p class="subheading">选择分割用图谱信息 *</p>
+	        <p class="subheading">Select Atlas *</p>
 	        <select name="atlas_name" id="atlas_name" class="form-control span7">
 	        <!-- elements without a name in a form will not be in submitted data
 	        <select id="atlas_name" class="form-control span7"> -->
@@ -320,15 +330,15 @@
 	            	        </select>
 	        <br>
 	        <p></p>
-	        <p> <span class="subheading">添加您的描述: </span> (e.g. AD_subject1)</p>
+	        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">	        <!-- The global progress bar -->
 	    
 	        <p></p>
-	        <p><strong>处理进度</strong></p>
+	        <p><strong>Progress</strong></p>
 	    <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
 	        <br>
 	        <!-- only one button element in a form, it's for submission!!!! -->
-	    <button class="btn" id="pb">提交</button>
+	    <button class="btn" id="pb">Submit</button>
 			    <br>
 	    </td>
 	    <td width="50%">
@@ -343,14 +353,15 @@
 <div>
 <br><br>
 <p>
-* 图谱信息包含“年龄范围”+“图谱中的结构数量”+“图谱数量”+（“融合算法”）+“图谱版本”
+* The atlas name consists of "Age range" + "The number of defined structures" + "The number of atlases" + ("Fusion algorithm") + "Atlas version".
 <br>
-“融合算法”部分暗示着以下的信息：
+For the "Fusion algorithm" section indicates the following:
 <br>
-M1或没有特别说明：使用Tang等人(1)提出的融合算法。
+M1 or not specified: The fusion algorithm follows the method described by Tang et al (1).
+
 <br>
-M2：最终融合步骤由Drs. Hongzhi Wang 和 Paul Yushkevich提供(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>)。
-算法的具体细节可以在(2)中查阅。
+M2: The final atlas-fusion step of this pipeline uses algorithms that was kindly provided by Drs. Hongzhi Wang and Paul Yushkevich 
+(<a target="_blank" href="http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/">http://picsl.upenn.edu/people/faculty-staff/paul-yushkevich/</a>). The details of the algorithm can be found in a reference below (2).
 <br>
 <small>(1) Tang, X., K. Oishi, A. V. Faria, A. E. Hillis, M. S. Albert, S. Mori and M. I. Miller (2013). "Bayesian Parameter Estimation and Segmentation in the Multi-Atlas Random Orbit Model." PLOS ONE 8(6): e65591, 3688886
 <br>
@@ -368,7 +379,7 @@ M2：最终融合步骤由Drs. Hongzhi Wang 和 Paul Yushkevich提供(<a target=
   		
     <div class="container text-center">
         <hr>
-<p>MriCloud  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/t1batch#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="1"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>

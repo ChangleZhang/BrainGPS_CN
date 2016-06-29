@@ -3,7 +3,7 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
 <!--     https://braingps.mricloud.org -->
-    <title>迈格云平台 | DTI多图谱分割</title>
+    <title>MriCloud | Brain Mapping</title>
 
     
     <link rel="shortcut icon" href="https://braingps.mricloud.org/img/favicon.ico">
@@ -59,6 +59,17 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	
+	<link type="text/css" href="./addfiles/sliders.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/elian.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/mycss.css" rel="stylesheet">
+		<link type="text/css" href="./addfiles/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="./addfiles/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="./addfiles/swiper-3.3.1.min.css">
+		<script src="./addfiles/jquery.min.js"></script>
+		<script src="./addfiles/bootstrap.min.js"></script>
+		<script src="bootstrap/bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+	
   </head>
   <body>
 		        <div class="container">
@@ -66,17 +77,15 @@
              <div class="container-fluid"> 
             
 <!--               <a class="brand" href="/">MriCloud</a> -->
-             <div class="navbar-header">
-               <a class="navbar-brand" href="https://braingps.mricloud.org/">欢迎使用迈格云平台</a>
-             </div> 
+       
 <!--               <div class="collapse nav-collapse"> -->
 <!-- -->
             <ul class="nav navbar-nav">
 			<!-- UrlHelper::get_active("home") will return whether the button will appear active according to the path name -->
 			<!-- HTML::link('home','Home') first argument is path, second argument is the displayed string of the button -->
-            <li class=""><a href="BrainGPSindex">主页</a></li>
+            <li class=""><a href="BrainGPSindex.html">主页</a></li>
 			<li class="dropdown">
- 	         <a href="https://braingps.mricloud.org/dtimultiatlasseg" class="dropdown-toggle" data-toggle="dropdown">用户手册<b class="caret"></b></a> 
+ 	         <a href="https://braingps.mricloud.org/dtimultiatlasseg" class="dropdown-toggle" data-toggle="dropdown">手册<b class="caret"></b></a> 
 	        	<ul class="dropdown-menu">
 	            <li><a href="tutorial.html">T1-多图谱分割</a></li>
 	           	<li><a href="https://braingps.mricloud.org/docs/MriCloudRelease_DTI.pdf">DTI Calculation</a></li>
@@ -122,36 +131,32 @@
 <!-- 	          <li class=""><a href="https://braingps.mricloud.org/roivis">ROIVis</a></li>-->
 	          <li class=""><a href="myjobstatus.html">我的工作状态</a></li>
 	          <li class=""><a href="atlasrepo.html">图谱信息</a></li>	          
-		      <li class=""><a href="datasources.html">数据来源</a></li>
-		    		                <li class=""><a href="profile.html">我的个人信息</a></li>					          
+		      <li class=""><a href="profile.html">我的个人信息</a></li>
+		    		                <li class=""><a href="https://braingps.mricloud.org/logout">登出</a></li>					          
 		      
  <!--              <li class=""><a href="BrainGPSindex">主页</a></li>
               <li class=""><a href="datasources.html">数据来源</a></li>
               <li class=""><a href="https://braingps.mricloud.org/processingservers">Processing Servers</a></li>
 -->
-              <li class=""><a href="BGSabout.html">关于</a></li>
-              <li class=""><a href="BGSterms.html">条款</a></li>
-              <li class=""><a href="BGScontact.html">联系我们</a></li>
-                <li class="nav navbar-nav navbar-right">
-                      <a href="https://braingps.mricloud.org/logout" class="navbar-link navbar-right">登出</a>
-                </li>
+           
               </ul>
           </div><!--/.nav-collapse -->
       </div>
       </div>
 
-   <div class="container">
+   <div class="container" style="margin-top:100px">
     <div class="nav navbar-default">
 
         
-<h3>DTI 多图谱分割</h3>
-	<p>您可以查阅 <a href="tutorial.html" target="_blank">手册</a>.</p>
+<h4>DTI MultiAtlas Segmentation</h4>
+	<p>First time user? Manual is available <a href="https://braingps.mricloud.org/docs/tutorials/mricloud.html" target="_blank">here</a>.</p>
 
 <form method="POST" action="https://braingps.mricloud.org/dtimultiatlasseg" accept-charset="UTF-8" class="form-horizontal" id="fileupload"><input name="_token" type="hidden" value="PEj7qZXOVxvHQDDF9TIPTlpKeIEBnt6zhRKeelU3">
 	<!-- as the bootstrap changes the classname will change -->	
 	
 	
-	<div> <p><strong>请注意</strong>： 因为存储空间限制，您的处理结果将会在任务提交后的60天删除，请及时下载您的处理结果。
+	<div> <p><strong>Warning</strong>: Due to limited storage space, all jobs and their results will 
+be deleted from our server after 60 days from submission date, please download results in time.
 </p></div>	<!--	<div>
 	If your images are in DICOM format, please first convert them to Analyze format.
 	Click <a href="tools/Dcm2Analyze.exe" >here</a> to download a conversion tool for Windows OS						
@@ -166,42 +171,42 @@
 </p>
  -->
  
-<p> 在DTI多图谱分割过程中，您需要上传的压缩包中应包含以下信息：</p>
-<p>1)	b0 imgae (subjectname_b0.img, subjectname_b0.hdr)</p>
+<p> All visualization in MriCloud follows the Radiology convention: the image left is the patient right. We are aware of inconsistency in the definitions of image orientations in DICOM, Analyze, and other file types. We guarantee the right-left orientation ONLY WHEN the output Analyze files from DtiCloud: DTI Processing pipeline are used. The required input files are;</p>
+<p>1)	b0 image (subjectname_b0.img, subjectname_b0.hdr)</p>
 <p>2)	Mean diffusion weighted images (subjectname_dwi.img, subjectname_dwi.hdr)</p>
 <p>3)	Tensor file (subjectname_tensor.dat), which is a raw matrix with 6xD1xD2xD3)</p>
-<p> 对于输入文件的名字没有特殊要求，但请注意不要包含空格</p>
-<p>所有输入的图像应该是axial成像角度，并且放入到一个压缩包中，请注意，压缩包的名称同样不应含有空格。
+<p> subjectname can be anything (no spaces)</p>
+<p>All images need to be axial. These files need to be zipped into one file (zipfilename can be anything (no spaces)) in this order. 
 </p>
 
 </div>	<!-- put form and picture side by side 
 	http://stackoverflow.com/questions/14148134/how-to-position-three-div-elements-side-by-side-across-a-webpage -->	
 	<div style="float: left; width: 50%;">
     <!-- The fileinput-button span is used to style the file input field as button -->
-    <p>如果需要全部重新设置，您可以刷新当前界面</p>
-    <p><strong>上传压缩包文件</strong></p>
+    <p>To start over, refresh the page</p>
+    <p><strong>Upload zip file</strong></p>
     <span class="btn btn-success fileinput-button">
         <i class="icon-plus icon-white"></i>
-        <span>压缩包(.zip)</span>
+        <span>.zip</span>
         <input type="file" name="zip">
     </span>
     <br>
-    <p><strong>文件选择</strong></p>
+    <p><strong>Files selected</strong></p>
     
     <br>
     <div id="files" class="files"></div>
 	<br>
-       <p class="subheading">S选择处理服务器</p>
+       <p class="subheading">Select processing server</p>
         <select name="processing_serverid" id="processing_serverid" class="form-control span5">
                           <option value="Gordon">Computational Anatomy Science Gateway</option>
                     </select>
         <p></p>
-       <p class="subheading">选择成像角度</p>
+       <p class="subheading">Select Slice Type</p>
         <select name="slice_type" id="" slice_type""="" class="form-control span7">
                           <option value="0">Axial</option>
                     </select>
         <br>
-        <p class="subheading">选择分割用图谱信息</p>
+        <p class="subheading">Select Atlas</p>
         <select name="atlas_name" id="atlas_name" class="form-control span7"> --&gt;
         <!-- elements without a name in a form will not be in submitted data
         <select id="atlas_name" class="form-control span7"> -->
@@ -209,14 +214,14 @@
                           <option value="1">Adult_168labels_8atlases_V1</option>
                     </select>
         <br>
-        <p> <span class="subheading">添加您的描述： </span> (e.g. AD_subject1)</p>
+        <p> <span class="subheading">Description: </span> (e.g. AD_subject1)</p>
 <input placeholder="write job description here" class="form-control span5" name="description" type="text" value="">    <!-- The global progress bar -->
     
-        <p><strong>处理进度</strong></p>
+        <p><strong>Progress</strong></p>
     <div id="progress" class="progress"><div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div></div>
 
     <br>
-    <button class="btn" id="pb">提交</button>
+    <button class="btn" id="pb">Submit</button>
     <br>
     </div>
 
@@ -231,7 +236,7 @@
   		
     <div class="container text-center">
         <hr>
-<p>迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
+<p style="font-size:14px;font-family:微软雅黑">迈格云平台  <br> Site created by <a href="http://www.anatomyworks.com/">AnatomyWorks, LLC</a>. All Rights Reserved 2016 
 <a href="https://braingps.mricloud.org/dtimultiatlasseg#mricloud_tip"><i class="icon-info-sign" id="mricloudtip" data-hasqtip="0"></i></a>
 		</p><div id="mricloud_tip" style="display:none">
 		<p>	MriCloud 1.0</p>
